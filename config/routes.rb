@@ -1,4 +1,16 @@
 WeaponsApp::Application.routes.draw do
+  get "pages/home"
+
+  get "pages/contact"
+
+  get "pages/help"
+
+  get "pages/advertising"
+
+  get "pages/privacy"
+
+  get "pages/testimonies"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
