@@ -1,0 +1,27 @@
+!!! 5
+%html
+  %head
+    %title= title
+    /* 1. IE scripts:
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 6]>
+    <link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
+    <![endif]-->
+    /* 2. STYLESHEETS:
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+    = stylesheet_link_tag 'print.css', :media => 'print'
+    /[if IE]
+    = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+    /*--------------------------------------------------------------------------*/
+    = csrf_meta_tag
+  %body
+    .container
+      = render 'layouts/header'
+      %section.round
+        - flash.each do |key, value|
+          = content_tag(:div, value, :class => "flash #{key}")
+        = yield
+      %section.round
+        = render 'layouts/footer'
+        = debug(params) if Rails.env.development?
