@@ -1,18 +1,11 @@
 WeaponsApp::Application.routes.draw do
-  get "pages/home"
-  
-  get "pages/about"
-
-  get "pages/contact"
-
-  get "pages/help"
-
-  get "pages/advertising"
-
-  get "pages/privacy"
-
-  get "pages/testimonies"
-
+  match'/help'        ,         :to => 'pages#help'
+  match'/about'       ,         :to => 'pages#about'
+  match'/advertising' ,         :to => 'pages#advertising'
+  match'/contact'     ,         :to => 'pages#contact'
+  match'/privacy'     ,         :to => 'pages#privacy'
+  match'/testimonies' ,         :to => 'pages#testimonies'
+                  root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
