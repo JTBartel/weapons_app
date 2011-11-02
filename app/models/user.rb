@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 class User < ActiveRecord::Base
   attr_accessible :name, :email
   
@@ -20,3 +9,18 @@ class User < ActiveRecord::Base
                     :format     => { :with => email_regex }       ,
                     :uniqueness => { :case_sensitive => false }
 end
+
+# == Schema Information
+#
+# Table name: users
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean         default(FALSE)
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+
