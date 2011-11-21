@@ -5,7 +5,7 @@ WeaponsApp::Application.routes.draw do
   resources :sessions, :only => [:new, :create, :destroy] 
   match '/signup'     ,         :to => 'users#new'
   match '/signin'     ,         :to => 'sessions#new'
-  match '/signout'    ,         :to => 'sessions#destory'
+  match '/signout'    ,         :to => 'sessions#destroy'
   match'/help'        ,         :to => 'pages#help'
   match'/about'       ,         :to => 'pages#about'
   match'/advertising' ,         :to => 'pages#advertising'
