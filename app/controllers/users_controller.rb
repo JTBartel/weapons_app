@@ -4,8 +4,12 @@ class UsersController < ApplicationController
   before_filter :admin_user,   :only => :destroy
   
   def new
-    @title = "Sign up"
-    @user = User.new
+    if current_user
+      redirect_to(root_path)
+    else
+      @title = "Sign up"
+      @user = User.new
+    end
   end
   
   def create
@@ -16,6 +20,8 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       @title = "Sign up"
+      @user.password = ""
+      @user.password_confirmation = ""
       render 'new'
     end
   end
