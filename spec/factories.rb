@@ -13,3 +13,8 @@ end
 Factory.sequence :email do |n|
   "person-#{n}@example.com"
 end
+Factory.define :weapon do |weapon|
+  weapon.weapon_name "M1 Garand"
+  weapon.weapon_type "Rifle"
+  weapon.association :user
+end

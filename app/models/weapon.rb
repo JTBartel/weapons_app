@@ -15,7 +15,14 @@ class Weapon < ActiveRecord::Base
                   :effective_range_unit ,
                   :origin_country       ,
                   :year_made
-  belongs_to :user                
+  belongs_to :user   
+  
+  validates :weapon_name,       :presence     => true,
+                                :length       => { :maximum => 50 }                                    
+  validates :weapon_type,       :presence     => true,
+                                :length       => { :maximum => 50 }
+  validates :user_id,           :presence     => true,
+                                :length       => { :maximum => 150 }                                                                               
 end
 
 # == Schema Information

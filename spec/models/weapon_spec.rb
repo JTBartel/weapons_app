@@ -1,7 +1,56 @@
 require 'spec_helper'
 
 describe Weapon do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  before(:each) do
+    @user = Factory(:user)
+    @attr = { :weapon_type  => "Rifle"        ,                  
+              :weapon_name  => "M1 Garand"    ,
+              :user_id      => @user.id       }
+  end
+
+  it "should create a new weapon given valid attributes" do
+    @user.weapons.create!(@attr)
+  end
+
+  describe "user associations" do
+
+    before(:each) do
+      @weapon = @user.weapons.create(@attr)
+    end
+
+    it "should have a user attribute" do
+      @weapon.should respond_to(:user)
+    end
+
+    it "should have the right associated user" do
+      @weapon.user_id.should == @user.id
+      @weapon.user.should == @user
+    end
+  end
+  
+  describe "validations" do
+
+    it "should require a user id" do
+      Weapon.new(@attr).should_not be_valid
+    end
+
+    it "should require nonblank name" do
+      @user.weapons.build(:weapon_name => "  ").should_not be_valid
+    end
+    
+    it "should require nonblank type" do
+      @user.weapons.build(:weapon_type => "  ").should_not be_valid
+    end
+
+    it "should reject long name" do
+      @user.weapons.build(:weapon_name => "a" * 51).should_not be_valid
+    end
+    
+    it "should reject long type" do
+      @user.weapons.build(:weapon_type => "a" * 51).should_not be_valid
+    end
+  end
 end
 
 # == Schema Information
