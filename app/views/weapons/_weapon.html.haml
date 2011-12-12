@@ -1,0 +1,5 @@
+/* default size is 50
+%li
+ = link_to weapon.weapon_name, user_weapon_path(@user, weapon.id)
+ //- if current_user.admin?
+ // | #{link_to "delete", weapon, :method => :delete, :confirm => "You sure?", :title => "Delete #{weapon.weapon_name}"}
