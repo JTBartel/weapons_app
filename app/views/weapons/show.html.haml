@@ -1,2 +1,32 @@
-%h1 Weapons#show
-%p Find me in app/views/weapons/show.html.haml
+%table.profile{:summary => "Weapon information"}
+ %tr
+  %td.main
+   %h1
+    = @weapon.weapon_image
+    %br/ 
+    = @weapon.weapon_type
+    %br/
+    = @weapon.weapon_name
+  %td.sidebar.round
+   %strong Name
+   = @weapon.origin_country
+   = @weapon.year_made
+   %br/
+   %strong URL
+   = "future use"
+/	#  weapon_type          :string(255)
+/	#  weapon_name          :string(255)
+/	#  weapon_nickname      :string(255)
+/	#  weapon_action        :string(255)
+/	#  weapon_image         :string(255)
+/	#  caliber              :integer
+/	#  caliber_unit         :string(255)
+/	#  round_cap            :integer
+/	#  rate_of_fire         :integer
+/	#  rof_unit             :string(255)
+/	#  max_range            :integer
+/	#  max_range_unit       :string(255)
+/	#  effective_range      :integer
+/	#  effective_range_unit :string(255)
+/	#  origin_country       :string(255)
+/	#  year_made
