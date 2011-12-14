@@ -1,5 +1,6 @@
-%h1 Weapon Inventory
-= will_paginate
-%ul.users
- = render @weapons
-= will_paginate
+%h1 Weapons Inventory
+.line
+ = form_tag weapons_path, :method => 'get' do
+  = render 'weapon'
+/  = text_field_tag :search, params[:search]
+/  = submit_tag "Search for Team Name", :name => nil

@@ -1,6 +1,30 @@
 /* default size is 50
-%li
- = gravatar_for user, :size => 55
- = link_to user.name, user
- - if current_user.admin?
-  | #{link_to "delete", user, :method => :delete, :confirm => "You sure?", :title => "Delete #{user.name}"}
+/= hidden_field_tag :direction, params[:direction]
+/= hidden_field_tag :sort, params[:sort]
+.justright= will_paginate @users
+%table.main{:summary => "Users"}
+ %tr
+  %th.size1of5
+   = "Gravatar"
+  %th.size1of4
+   = "Name"
+  %th.size1of4
+   = "Fav Weapon"
+  %th.size1of10
+   = "future"
+  %th.size1of10
+   = "future"
+  %th.size1of10
+ - for user in @users
+  %tr
+   %td.justleft
+    = gravatar_for user, :size => 55
+   %td.smallpadding
+    = link_to user.name, user_path(user)
+   %td.smallpadding
+    = user.email
+   %td.smallpadding
+   %td.smallpadding
+   %td.justcenter
+    - if current_user.admin?
+     | #{link_to "delete", user, :method => :delete, :confirm => "You sure?", :title => "Delete #{user.name}"}

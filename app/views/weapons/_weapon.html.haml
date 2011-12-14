@@ -1,5 +1,32 @@
 /* default size is 50
-%li
- = link_to weapon.weapon_name, user_weapon_path(@user, weapon.id)
- //- if current_user.admin?
- // | #{link_to "delete", weapon, :method => :delete, :confirm => "You sure?", :title => "Delete #{weapon.weapon_name}"}
+/= hidden_field_tag :direction, params[:direction]
+/= hidden_field_tag :sort, params[:sort]
+.justright= will_paginate @weapons
+%table.main{:summary => "Weapons"}
+ %tr
+  %th.size1of5
+   = "Image"
+  %th.size1of4
+   = "Type"
+  %th.size1of4
+   = "Name"
+  %th.size1of10
+   = "Weapon Action"
+  %th.size1of10
+   = "Yr. Made"
+  %th.size1of10
+ - for weapon in @weapons
+  %tr
+   %td.justleft
+    = "Future"
+   %td.smallpadding
+    = weapon.weapon_type
+   %td.smallpadding
+    = weapon.weapon_name
+   %td.smallpadding
+    = weapon.weapon_action
+   %td.smallpadding
+    = weapon.year_made
+   %td.justcenter
+    - if current_user.admin?
+     | #{link_to "delete", weapon, :method => :delete, :confirm => "You sure?", :title => "Delete #{weapon.weapon_name}"}

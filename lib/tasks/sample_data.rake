@@ -21,10 +21,15 @@ namespace :db do
   
     User.all(:limit => 2).each do |user|
       55.times do |n|
-        weaponname         = Faker::Name.name + " Gun"
-        weapontype         = Faker::Name.name + " Type"
-        user.weapons.create!( :weapon_name         => weaponname  ,
-                              :weapon_type         => weapontype  )
+        weaponname        = Faker::Name.name + " Gun"
+        weapontype        = Faker::Name.name + " Type"
+        weaponaction      = Faker::Name.first_name + " Action"
+        weaponyear        = "19#{n}"
+        user.weapons.create!( :weapon_name        => weaponname   ,
+                              :weapon_type        => weapontype   ,
+                              :weapon_action      => weaponaction ,
+                              :year_made          => weaponyear   )
+                              
       end
     end
   end
