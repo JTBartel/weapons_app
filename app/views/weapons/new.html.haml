@@ -1,2 +1,4 @@
-%h1 Weapons#new
-%p Find me in app/views/weapons/new.html.haml
+/weapons
+%h1 Add Weapon
+= form_for(@weapon) do |f|
+ = render 'fields', :f => f

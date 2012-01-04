@@ -22,7 +22,7 @@
    %td.smallpadding
     = weapon.weapon_type
    %td.smallpadding
-    = weapon.weapon_name
+    = link_to weapon.weapon_name, user_weapon_path(@user, weapon.id)
    %td.smallpadding
     = weapon.weapon_action
    %td.smallpadding

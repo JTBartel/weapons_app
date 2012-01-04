@@ -1,0 +1,84 @@
+= render 'shared/error_messages', :object => f.object 
+.field
+ = f.label :weapon_type, "Weapon Type"
+ %br/
+ = f.select(:weapon_type, [['Rifle',"Rifle"], ['Assault Rifle',"Assault Rifle"], ['Sub-Machine Gun',"Sub-Machine Gun"], ['Shot Gun',"Shot Gun"], ['Light Machine Gun',"Light Machine Gun"], ['Sniper Rifle',"Sniper Rifle"]])
+.field
+ = f.label :weapon_name, "Weapon Name"
+ %br/
+ = f.text_field :weapon_name
+.field
+ = f.label :weapon_nickname, "Nickname"
+ %br/
+ = f.text_field :weapon_nickname
+.field
+ = f.label :weapon_action, "Weapon Action"
+ %br/
+ = f.select(:weapon_action, [['Automatic',"Automatic"], ['Semi-Automatic',"Semi-Automatic"], ['Bolt Action',"Bolt Action"], ['Pump Action',"Pump Action"], ['Automatic',"Automatic"], ['Automatic',"Automatic"]])
+.field
+ = f.label :weapon_image, "Weapon Image"
+ %br/
+ = f.text_field :weapon_image
+.field
+ = f.label :caliber, "Caliber"
+ %br/
+ = f.text_field :caliber
+.field
+ = f.label :caliber_unit, "Units"
+ %br/
+ = f.select(:caliber_unit, [['mm',"mm"], ['Cal',"Cal"], ['mm NATO',"mm NATO"], ['gauge',"gauge"], ['Automatic',"Automatic"], ['Automatic',"Automatic"]])
+.field
+ = f.label :round_cap, "Round Cap"
+ %br/
+ = f.text_field :round_cap
+.field
+ = f.label :rate_of_fire, "Rate of Fire"
+ %br/
+ = f.text_field :rate_of_fire
+ /.field
+ /= f.label :rof_units, "Rate Of Fire"
+ /%br/
+ /= f.text_field :rof_units
+.field
+ = f.label :max_range, "Max Range"
+ %br/
+ = f.text_field :max_range
+.field
+ = f.label :max_range_unit, "Units"
+ %br/
+ = f.select(:max_range_unit, [['ft',"ft"], ['yds',"yds"], ['m',"m"]])
+.field
+ = f.label :effective_range, "Effective Range"
+ %br/
+ = f.text_field :effective_range
+.field
+ = f.label :effective_range_unit, "Units"
+ %br/
+ = f.select(:effective_range_unit, [['ft',"ft"], ['yds',"yds"], ['m',"m"]])
+.field
+ = f.label :origin_country, "Country of Origin"
+ %br/
+ = f.text_field :origin_country
+.field
+ = f.label :year_made, "Year Made"
+ %br/
+ = f.text_field :year_made
+.actions
+ = f.submit "Add your weapon!"
+
+/#  weapon_type          :string(255)
+/#  weapon_name          :string(255)
+/#  weapon_nickname      :string(255)
+/#  weapon_action        :string(255)
+/#  weapon_image         :string(255)
+/#  caliber              :integer
+/#  caliber_unit         :string(255)
+/#  round_cap            :integer
+/#  rate_of_fire         :integer
+/#  rof_unit             :string(255)
+/#  max_range            :integer
+/#  max_range_unit       :string(255)
+/#  effective_range      :integer
+/#  effective_range_unit :string(255)
+/#  origin_country       :string(255)
+/#  year_made            :integer
