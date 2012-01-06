@@ -4,7 +4,7 @@
  %tr
   %td.main
    %h1
-    = image_tag @weapon.weapon_image_url.to_s
+    = image_tag @weapon.weapon_image_url(:xlarge_thumb).to_s
     %br/ 
     = @weapon.weapon_type
     %br/
