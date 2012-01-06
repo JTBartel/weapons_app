@@ -1,4 +1,4 @@
 /weapons
 %h1 Add Weapon
-= form_for(@weapon) do |f|
+= form_for @weapon, :html => {:multipart => true} do |f|
  = render 'fields', :f => f

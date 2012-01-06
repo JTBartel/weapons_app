@@ -2,7 +2,7 @@
 .field
  = f.label :weapon_type, "Weapon Type"
  %br/
- = f.select(:weapon_type, [['Rifle',"Rifle"], ['Assault Rifle',"Assault Rifle"], ['Sub-Machine Gun',"Sub-Machine Gun"], ['Shot Gun',"Shot Gun"], ['Light Machine Gun',"Light Machine Gun"], ['Sniper Rifle',"Sniper Rifle"]])
+ = f.select(:weapon_type, [['Rifle',"Rifle"], ['Assault Rifle',"Assault Rifle"], ['Sub-Machine Gun',"Sub-Machine Gun"], ['Shot Gun',"Shot Gun"], ['Light Machine Gun',"Light Machine Gun"], ['Sniper Rifle',"Sniper Rifle"], ['Handgun',"Handgun"], ['Launcher',"Launcher"]])
 .field
  = f.label :weapon_name, "Weapon Name"
  %br/
@@ -14,11 +14,12 @@
 .field
  = f.label :weapon_action, "Weapon Action"
  %br/
- = f.select(:weapon_action, [['Automatic',"Automatic"], ['Semi-Automatic',"Semi-Automatic"], ['Bolt Action',"Bolt Action"], ['Pump Action',"Pump Action"], ['Automatic',"Automatic"], ['Automatic',"Automatic"]])
+ = f.select(:weapon_action, [['Automatic',"Automatic"], ['Semi-Automatic',"Semi-Automatic"], ['Bolt Action',"Bolt Action"], ['Pump Action',"Pump Action"], ['Lever Action',"Lever Action"], ['Automatic',"Automatic"]])
 .field
- = f.label :weapon_image, "Weapon Image"
+ = f.label :remote_weapon_image_url, "Weapon Image"
  %br/
- = f.text_field :weapon_image
+ = f.file_field :weapon_image
+ = f.text_field :weapon_image_url
 .field
  = f.label :caliber, "Caliber"
  %br/

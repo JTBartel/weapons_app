@@ -31,6 +31,8 @@ GEM
     annotate (2.4.0)
     arel (2.0.10)
     builder (2.1.2)
+    carrierwave (0.5.8)
+      activesupport (~> 3.0)
     chunky_png (1.2.5)
     compass (0.11.5)
       chunky_png (~> 1.2)
@@ -116,6 +118,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate (= 2.4.0)
+  carrierwave
   compass
   compass-susy-plugin
   factory_girl_rails (= 1.0)

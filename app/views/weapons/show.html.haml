@@ -1,8 +1,10 @@
+%h5
+ = link_to "Edit Weapon", edit_user_weapon_path(@user)
 %table.profile{:summary => "Weapon information"}
  %tr
   %td.main
    %h1
-    = @weapon.weapon_image
+    = image_tag @weapon.weapon_image_url.to_s
     %br/ 
     = @weapon.weapon_type
     %br/

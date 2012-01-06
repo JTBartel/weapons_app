@@ -15,7 +15,9 @@ class Weapon < ActiveRecord::Base
                   :effective_range_unit ,
                   :origin_country       ,
                   :year_made
-  belongs_to :user   
+  belongs_to :user
+  
+  mount_uploader :weapon_image, ImageUploader   
   
   validates :weapon_name,       :presence     => true,
                                 :length       => { :maximum => 50 }                                    
