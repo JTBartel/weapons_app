@@ -18,7 +18,7 @@
  - for weapon in @weapons
   %tr
    %td.justleft
-    = "Future"
+    = image_tag weapon.weapon_image_url(:tiny_thumb).to_s, :alt => ""
    %td.smallpadding
     = weapon.weapon_type
    %td.smallpadding
@@ -29,4 +29,4 @@
     = weapon.year_made
    %td.justcenter
     - if current_user.admin?
-     | #{link_to "delete", weapon, :method => :delete, :confirm => "You sure?", :title => "Delete #{weapon.weapon_name}"}
+     = link_to "Delete?", user_weapon_path(@user, weapon.id), :confirm => 'Are you sure?', :method => :delete

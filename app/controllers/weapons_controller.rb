@@ -47,7 +47,7 @@ class WeaponsController < ApplicationController
   end
   
   def destroy
-    @weapon = Weapon.find(params[:id])
+    @weapon = Weapon.destroy(params[:id])
     redirect_to weapons_path, :flash => { :success => "weapon deleted"}
   end
 
