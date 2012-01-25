@@ -17,4 +17,7 @@
  %br/
  = f.password_field :password_confirmation
 .actions
- = f.submit "Sign up"
+ - if current_user?(@user)
+  = f.submit "Update"
+ - else
+  = f.submit "Sign up"

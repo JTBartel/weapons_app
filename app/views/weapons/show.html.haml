@@ -1,14 +1,103 @@
+/ WEAPONS set up the layout
 %h5
  = link_to "Edit Weapon", edit_user_weapon_path(@user)
 %table.profile{:summary => "Weapon information"}
  %tr
   %td.main
-   %h1
-    = image_tag @weapon.weapon_image_url(:xlarge_thumb).to_s
-    %br/ 
-    = @weapon.weapon_type
-    %br/
-    = @weapon.weapon_name
+   / THIS SECTION IS WHERE YOU PUT YOUR .LINE AND .UNITS 
+   .line
+    %h1
+     = image_tag @weapon.weapon_image_url(:xlarge_thumb).to_s
+     %br/
+     /-----------------------firstlineoftable------------------------/ 
+   .line
+    .unit.size1of2
+     %table.main{:summary => "Weapon Basics"}
+      %tr.justcenter
+       = "Weapon Basics"
+      %tr.justcenter
+       %th.size1of4
+        = "Weapon Type"
+       %th.size1of4
+        = "Name"
+       %th.size1of4
+        = "Nickname"
+       %th.size1of4
+        = "Weapon Action"
+      %tr.justcenter
+       %td
+        = @weapon.weapon_type
+       %td
+        = @weapon.weapon_name
+       %td
+        = @weapon.weapon_nickname
+       %td
+        = @weapon.weapon_action
+    .unit.size1of2
+     %table.main{:summary => "Weapon Munitions"}
+      %tr.justcenter
+       = "Weapon Munitions"
+      %tr.justcenter
+       %th.size1of5
+        = "Caliber"
+       %th.size1of5
+        = "Units"
+       %th.size1of5
+        = "Round Cap."
+       %th.size1of5
+        = "Rate of Fire"
+       %th.size1of5
+        = "ROF Units"
+      %tr.justcenter
+       %td
+        = @weapon.caliber
+       %td
+        = @weapon.caliber_unit
+       %td
+        = @weapon.round_cap
+       %td
+        = @weapon.rate_of_fire
+       %td
+        = @weapon.rof_unit
+       /------------------secondlineoftable------------------------/ 
+   .line
+    .unit.size1of2
+     %table.main{:summary => "Weapon Range"}
+      %tr.justcenter
+       = "Weapon Range"
+      %tr.justcenter
+       %th.size1of4
+        = "Max Range"
+       %th.size1of4
+        = "Units"
+       %th.size1of4
+        = "Effective Range"
+       %th.size1of4
+        = "Units"
+      %tr.justcenter
+       %td
+        = @weapon.max_range
+       %td
+        = @weapon.max_range_unit
+       %td
+        = @weapon.effective_range
+       %td
+        = @weapon.effective_range_unit
+    .unit.size1of2
+     %table.main{:summary => "Weapon Origin"}
+      %tr.justcenter
+       = "Weapon Origin"
+      %tr.justcenter
+       %th.size1of2
+        = "Country"
+       %th.size1of2
+        = "Year Made"
+      %tr.justcenter
+       %td
+        = @weapon.origin_country
+       %td
+        = @weapon.year_made
+       / END OF THIS SECTION
   %td.sidebar.round
    %strong Name
    = @weapon.origin_country
