@@ -59,6 +59,8 @@ $red-color: Crimson;
 $back-color: LemonChiffon;
 $sun-color: LightSalmon;
 $sky-color: PowderBlue;
+$light-sky: Azure;
+
 
 /* MIXINS: for duplicate codes                   */
 /* none for the moment..............             */
@@ -110,7 +112,7 @@ p {
 /* CSS CLASSES ***********************************/
 /* CONTAINER:  whole = both sections             */
 /* any padding showing up on outside             */
-.container {
+textarea.container {
 	width: 960px;
 }
 
@@ -148,13 +150,43 @@ p {
 }
 
 /* TABLES MAIN DATA CELL: left column            */
+/* Oct 29, 2011, added some background gradients */
+/* and vertical alignment for table styling to   */
+/* occur only with .main attached to %table      */
 .main {
+	vertical-align: top;
   	padding: 5px;
 	border-style: solid;
 	border-width: 3px;
 	border-color: $border-color;
-}
+	font-size: 75%;
+	tr {
+		vertical-align: top;
+		background: $sky-color; /* for non-css3 browsers */
 
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$light-sky', endColorstr='$white-color'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from($light-sky), to($white-color)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  $light-sky,  $white-color); /* for firefox 3.6+ */
+	}
+	th {
+		text-align: center;
+		background: $grey-color; /* for non-css3 browsers */
+
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$grey-color', endColorstr='$white-color'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from($grey-color), to($white-color)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  $grey-color,  $white-color); /* for firefox 3.6+ */
+	}
+}
+$link-color: DarkBlue;
+$visit-color: Maroon;
+$black-color: Black;
+$white-color: White;
+$border-color: LightSeaGreen;
+$grey-color: WhiteSmoke;
+$red-color: Crimson;
+$back-color: LemonChiffon;
+$sun-color: LightSalmon;
+$sky-color: PowderBlue;
 /* SIDEBAR (right column)                        */
 .sidebar {
   	width: 20%;
@@ -191,8 +223,14 @@ th .desc {
 .justright {
 	text-align: right;
 }
+.verticaltop {
+	vertical-align: top;
+}
 .smallpadding {
 	padding: 5px;
+}
+.nopadding {
+	padding: none;
 }
 .marginbot {
 	margin-bottom: 0px;
@@ -218,7 +256,7 @@ section {
 
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$back-color', endColorstr='$sun-color'); /* for IE */
 	background: -webkit-gradient(linear, left top, left bottom, from($back-color), to($sun-color)); /* for webkit browsers */
-	background: -moz-linear-gradient(top,  $back-color,  $sun-color); /* for firefox 3.6+ */
+	background: -moz-linear-gradient(top,  $black-color,  $sun-color); /* for firefox 3.6+ */
 	font: {
 		size: 100%;
 		color: $black-color;		
@@ -615,6 +653,12 @@ div.edit {
 	border-radius: 10px;
 	}
 
+#tabs {
+	font-size: 100%;
+}
+#tabs a {
+	color: blue;
+}
 /* not sure what loading color is so experimenting...Not loading as of Oct. 1, so will look for later */
 #loading{
   position: absolute; 
@@ -626,10 +670,80 @@ div.edit {
   margin: 5px; 
   padding: 3px;
 }
+/*************************************************************************
+ * Timepicker stylesheet
+ * Highly inspired from datepicker
+ * FG - Nov 2010 - Web3R 
+ *
+ * version 0.0.3 : Fixed some settings, more dynamic
+ * version 0.0.4 : Removed width:100% on tables
+ * version 0.1.1 : set width 0 on tables to fix an ie6 bug
+ */
+
+.ui-timepicker-inline { display: inline; }
+
+#ui-timepicker-div { padding: 0.2em }
+.ui-timepicker-table { display: inline-table; width: 0; }
+.ui-timepicker-table table { margin:0.15em 0 0 0; border-collapse: collapse; }
+
+.ui-timepicker-hours, .ui-timepicker-minutes { padding: 0.2em;  }
+
+.ui-timepicker-table .ui-timepicker-title { line-height: 1.8em; text-align: center; }
+.ui-timepicker-table td { padding: 0.1em; width: 2.2em; }
+.ui-timepicker-table th.periods { padding: 0.1em; width: 2.2em; }
+
+/* span for disabled cells */
+.ui-timepicker-table td span {
+	display:block;
+    padding:0.2em 0.3em 0.2em 0.5em;
+    width: 1.2em;
+
+    text-align:right;
+    text-decoration:none;
+}
+/* anchors for clickable cells */
+.ui-timepicker-table td a {
+    display:block;
+    padding:0.2em 0.3em 0.2em 0.5em;
+    width: 1.2em;
+    cursor: pointer;
+    text-align:right;
+    text-decoration:none;
+}
+
+
+/* buttons and button pane styling */
+.ui-timepicker .ui-timepicker-buttonpane {
+    background-image: none; margin: .7em 0 0 0; padding:0 .2em; border-left: 0; border-right: 0; border-bottom: 0;
+}
+.ui-timepicker .ui-timepicker-buttonpane button { margin: .5em .2em .4em; cursor: pointer; padding: .2em .6em .3em .6em; width:auto; overflow:visible; }
+/* The close button */
+.ui-timepicker .ui-timepicker-close { float: right }
+
+/* the now button */
+.ui-timepicker .ui-timepicker-now { float: left; }
+
+/* the deselect button */
+.ui-timepicker .ui-timepicker-deselect { float: left; }
+
+
+/* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
+.ui-timepicker-cover {
+    display: none; /*sorry for IE5*/
+    display/**/: block; /*sorry for IE5*/
+    position: absolute; /*must have*/
+    z-index: -1; /*must have*/
+    filter: mask(); /*must have*/
+    top: -4px; /*must have*/
+    left: -4px; /*must have*/
+    width: 200px; /*must have*/
+    height: 200px; /*must have*/
+}
 
 span > div#loading {
   position: fixed;
 }
+/************************************************************************
 /* REMOVED H1 STYLING AND JUST SWITCHED TO H5 OCT 1,2011
 h1{
 font-size: 16px;
@@ -712,5 +826,51 @@ font-size: 16px;
     color: black; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+}
+
+.color_sample_black {
+	background: black;
+}
+.color_sample_blue {
+	background: blue;
+}
+.color_sample_brown {
+	background: SaddleBrown;
+}
+.color_sample_coral {
+	background: Tomato;
+}
+.color_sample_grey {
+	background: SlateGrey;
+}
+.color_sample_light_blue {
+	background: SkyBlue;
+}
+.color_sample_maroon {
+	background: maroon;
+}
+.color_sample_mauve {
+	background: MediumVioletRed;
+}
+.color_sample_ocean {
+	background: DeepSkyBlue;
+}
+.color_sample_olive {
+	background: olive;
+}
+.color_sample_orange {
+	background: orange;
+}
+.color_sample_pink {
+	background: Violet;
+}
+.color_sample_purple {
+	background: BlueViolet;
+}
+.color_sample_salmon {
+	background: Salmon;
+}
+.color_sample_teal {
+	background: Teal;
 }
 

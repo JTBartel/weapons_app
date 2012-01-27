@@ -6,6 +6,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '>= 3.0.pre'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'jquery-rails', '>= 1.0.12'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

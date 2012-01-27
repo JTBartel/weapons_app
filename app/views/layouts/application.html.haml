@@ -1,28 +1,145 @@
+/* THIS IS MY APPLICATION PAGE TEMPLATE           */       
+/* NOTE: lessthan ltIE9, lessthanequalto lteIE6 syntax
+/* INDEX of FILES: ORDER OF FILES MATTERS FOR PRIORITY: (links before files)
+/* !!! 5 declaration, reference: 
+/* http://haml-lang.com/docs/yardoc/file.HAML_REFERENCE.html#doctype_
+/* 1. Any Scripts for IE
+/* 2. Stylesheets (point to public/stylesheets for CSS, but are edited
+/*    in app/stylesheets SCSS files) per Compass with Screen main styling
+/* 3. jQuery theme files/links must go early with stylesheets
+/* 4. jquery must come before application so it will load up properly
+/*    4a. Use minified versions which are the larger uncompressed files
+/* 5. jQuery UI files/links should come AFTER jQuery
+/* 6. jQuery plugins and/or additional widget files
+/* 7. application should be second to last
+/* 8. rails.js last
+/* WARNING: Do NOT use jQuery Git in a production system or live application! /* It is not tested.
+
+/* Datepicker themes I like so far: humanity, start, redmond, pepper grinder, /* hot sneaks,
+
+
 !!! 5
 %html
-  %head
-    %title= title
-    /* 1. IE scripts:
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lte IE 6]>
-    <link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
-    <![endif]-->
-    /* 2. STYLESHEETS:
-    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
-    = stylesheet_link_tag 'print.css', :media => 'print'
-    /[if IE]
-    = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
-    = javascript_include_tag :defaults
-    /*--------------------------------------------------------------------------*/
-    = csrf_meta_tag
-  %body
-    .container
-      = render 'layouts/header'
-      %section.round
-        - flash.each do |key, value|
-          = content_tag(:div, value, :class => "flash #{key}")
-        = yield
-      %section.round
-        = render 'layouts/footer'
-        = debug(params) if Rails.env.development?
+ %head
+  %title= title
+  /* 1. IE scripts:
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lte IE 6]>
+  <link rel="stylesheet" href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
+  <![endif]-->
+  /* 2. STYLESHEETS:
+  = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+  = stylesheet_link_tag 'print.css', :media => 'print'
+  /[if IE]
+   = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+
+  /* 3. jQuery THEME...put before javascript tags as a stylesheet.  NOTE the reference to a folder of the same name as a theme.  The js file name remains the same, just the folder directory.  The theme should be the same for BOTH the googleapis link and the hard file.  Themes for things like test page and datepicker only change right here...there is no styleing specific to datepicker.  Calendar is NOT working yet.   NOTEIf you would like an easy way to allow your users to dynamically switch between themes, check out the Theme Switcher Widget at http://jqueryui.com/docs/Theming/ThemeSwitcher.
+
+  = stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/trontastic/jquery-ui.css"
+  = stylesheet_link_tag 'trontastic/jquery-ui-1.8.17.custom.css'
+  /* 3a. four css files associated with Fullcalendar plus Timepicker css
+  /= stylesheet_link_tag 'fullcalendar.css'
+  /= stylesheet_link_tag 'fullcalendar.print.css', :media => 'print'
+  / pulled out timepicker.css stuff and put in screen.scss and it still works
+  /= stylesheet_link_tag 'jquery.ui.timepicker.css'
+  /= stylesheet_link_tag 'dialog.css'
+
+  /* = stylesheet_link_tag 'jquery_ui'   this came from vinsol full calendar, so I pulled it because I don't think we need it...we have latest jQuery above.
+  /* = stylesheet_link_tag 'style' was small and I cut and pasted into our screen.scss file....all fullcalendar stylesheets stayed as css and do NOT duplicate into SCSS.
+  /* theme.css came from fullcalendar demos and put in for problems with event coloring...that just reverted back to a different theme, so leave out!!!! Also, the jquery.ui.theme.css file that came with the download had no effect.*/
+
+  /* 4. jQuery (LINK & FILE): 
+  /* = javascript_include_tag :defaults  DO NOT USE :DEFAULTS!! Prototype
+  = javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
+  = javascript_include_tag 'jquery-1.7.1.min.js'
+  /= javascript_include_tag 'jquery.ui.core.min.js'
+  /= javascript_include_tag 'jquery.ui.position.min.js'
+  /= javascript_include_tag 'jquery.ui.tabs.min.js'
+  /= javascript_include_tag 'jquery.ui.widget.min.js'
+  /* = javascript_include_tag 'jquery.js'
+
+  /* 5. jQuery UI (LINK & FILE) build your download ALL components
+  = javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"
+  = javascript_include_tag 'jquery-ui-1.8.17.custom.min.js'
+
+
+  /* 6. plugins/widgets: client_side validations, calendar, underscore
+  /* put in for Prototype bridge...will remove later.
+  /= javascript_include_tag 'rails.validations.js', 'rails.validations.custom.js'
+  /= javascript_include_tag 'fullcalendar.js'
+  /= javascript_include_tag 'jquery.ui.timepicker.js'
+  /8= javascript_include_tag 'gcal'
+  /* added from BOKMANN
+  /= javascript_include_tag 'calendar.js'
+  /= javascript_include_tag 'jquery.rest.js'
+  /* added from: http://www.pageloom.com/automatic-timezone-detection-with-javascript
+  /*= javascript_include_tag 'jstz.min.js' */
+
+  /* 7. application second to last
+  = javascript_include_tag 'application.js'
+  /* 8. rails last
+  /* RAILS.JS generated with new Rails app and contains all the unobtrusive handlers. But, it relies on PROTOTYPE, so if you want to rely on jQuery, use the following instead!!  CAN'T USE BOTH BECAUSE THEY CONFLICT!!  Ref: http://www.simonecarletti.com/blog/2010/06/unobtrusive-javascript-in-rails-3/   */
+  = javascript_include_tag 'jquery_ujs.js'
+  /*= javascript_include_tag 'rails.js'
+  /* = javascript_include_tag 'jrails.js' "officially obsolete"
+  /* I thought I needed jrails because Vinsol used Rails 2.  jRails provides the same helpers that were available in rails 2 jRails is a drop-in jQuery replacement for Prototype/script.aculo.us on Rails. Using jRails, you can get all of the same default Rails helpers for javascript functionality using the lighter jQuery library. NOTE Oct 3rd, it still didn't help the Create Event link...SO DO NOT USE!!    REF: http://keithschacht.com/getting-ajax-to-work-in-rails-3-with-jquery/ */
+  = csrf_meta_tag
+
+  /* SEE DRY up AJAX plugin (ref app controller).  This stores the authenticity_token into a javascript variable so jQuery.rest can access it.
+  /= javascript_tag "var AUTH_TOKEN = #{form_authenticity_token.inspect};" if protect_against_forgery?
+
+ /* the FLASH portion is a variable which operates like flash memory 
+ /* and is essentially a Hash.  The contents of the flash need to be 
+ /* displayed site wide, so included here.  The code inserts a /div tag
+ /* for each element in the flash, witha CSS class indicating the type
+ /* of message.We iterate through all possible key (:success) and value
+ /* pairs ("Welcome to app!") so we can include other kinds of flash
+ /* messages.
+ /* repeating Flash message addding up with create.js.erb problem:
+ /* tried adding :id (only had :class), tried moving the #flash_notice 
+
+
+ %body
+  .container
+   = render 'layouts/header'
+   %section.round
+    #flash_notice
+     - flash.each do |key, value|
+      = content_tag(:div, value,:id => "flash_notice", :class => "flash #{key}")
+    = yield
+   %section.round
+    = render 'layouts/footer'
+    = debug(params) if Rails.env.development?
+
+
+
+
+/!!! 5
+/%html
+/  %head
+/    %title= title
+/    /* 1. IE scripts:
+/    <!--[if lt IE 9]><script /src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+/    <![endif]-->
+/    <!--[if lte IE 6]>
+/    <link rel="stylesheet" /href="http://universal-ie6-css.googlecode.com/files/ie6.1.1.css" /media="screen, projection">
+/    <![endif]-->
+/    /* 2. STYLESHEETS:
+/    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+/    = stylesheet_link_tag 'print.css', :media => 'print'
+/    /[if IE]
+/    = stylesheet_link_tag 'ie.css', :media => 'screen, projection'
+/    = javascript_include_tag :defaults
+/    /*--------------------------------------------------------------------------*/
+/    = csrf_meta_tag
+/  %body
+/    .container
+/      = render 'layouts/header'
+/      %section.round
+/        - flash.each do |key, value|
+/          = content_tag(:div, value, :class => "flash #{key}")
+/        = yield
+/      %section.round
+/        = render 'layouts/footer'
+/        = debug(params) if Rails.env.development?

@@ -1,0 +1,76 @@
+%h1.justcenter
+ %a{:href => "http://jqueryui.com/demos/"} jQuery Test Page
+%body
+ #draggable.logo
+  %img
+   = logo
+  %p Drag Me Around
+ %div
+ %br
+ #slider
+ %div
+ #dialog{:title => "Basic dialog"}
+  %p This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.
+ %br
+ %div
+ %br
+ #tabs
+  %ul
+   %li
+    %a{:href => "#tabs-1"} Overview
+   %li
+    %a{:href => "#tabs-2"} Features
+   %li
+    %a{:href => "#tabs-3"} Comments
+   %li
+    %a{:href => "#tabs-4"} Screenshots
+  #tabs-1= render 'test_tabs_description'
+  #tabs-2= render 'test_features'
+  #tabs-3= render :partial => 'test_comments'
+  #tabs-4= render :partial => 'test_screenshots'
+ %div
+ %br
+ #accordion
+  %h3
+   %a{:href => "#header-1"} Overview
+  %div
+   #header-1= render 'test_tabs_description'
+  %h3
+   %a{:href => "#header-2"} Features
+  %div
+   #header-2= render 'test_features'
+  %h3
+   %a{:href => "#header-3"} Comments
+  %div
+   #header-3= render 'test_comments'
+  %h3
+   %a{:href => "#header-4"} Screenshots  
+  %div
+   #header-4= render 'test_screenshots'
+ %div
+ %br
+ #button
+  %button A button element
+  %input{:type => "submit", :value => "A submit button"}
+   %a{:href => "#button"} An anchor
+ %div
+ %br
+  %section 
+   %h1.justleft Resizable
+   #resizable.logo
+    %img
+     = logo
+  %section
+-# http://api.rubyonrails.org/classes/ActionView/Helpers/DateHelper.html#method-i-select_date
+- my_date = Time.now + 6.days
+%h3
+ = "All Day Sample Test from Chris"
+.line
+ .unit.size1of2
+  = label_tag "All Day"
+  = check_box_tag 'all_day', :value => true
+.line
+ .unit.size1of2
+  = select_date(my_date, {}, {:class => 'date_only'})
+  = select_datetime(my_date, {}, {:class => 'datetime', :style => "display:none"})
+

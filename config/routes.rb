@@ -7,15 +7,17 @@ WeaponsApp::Application.routes.draw do
   resources :weapons
   
   resources :sessions, :only => [:new, :create, :destroy] 
-  match '/signup'     ,         :to => 'users#new'
-  match '/signin'     ,         :to => 'sessions#new'
-  match '/signout'    ,         :to => 'sessions#destroy'
-  match'/help'        ,         :to => 'pages#help'
-  match'/about'       ,         :to => 'pages#about'
-  match'/advertising' ,         :to => 'pages#advertising'
-  match'/contact'     ,         :to => 'pages#contact'
-  match'/privacy'     ,         :to => 'pages#privacy'
-  match'/testimonies' ,         :to => 'pages#testimonies'
+  match '/signup'       ,         :to => 'users#new'
+  match '/signin'       ,         :to => 'sessions#new'
+  match '/signout'      ,         :to => 'sessions#destroy'
+  match '/help'         ,         :to => 'pages#help'
+  match '/about'        ,         :to => 'pages#about'
+  match '/advertising'  ,         :to => 'pages#advertising'
+  match '/contact'      ,         :to => 'pages#contact'
+  match '/privacy'      ,         :to => 'pages#privacy'
+  match '/test'         ,         :to => 'pages#test'
+  match '/testindex'    ,         :to => 'pages#testindex'  
+  match '/testimonies'  ,         :to => 'pages#testimonies'
                   root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
