@@ -49,9 +49,13 @@ body{_text-align:center;}/* IE5.5 */
 
 /* VARIABLES:  this section defines variables    */
 /* FOR COLORS:                                   */
-$link-color: DarkBlue;
-$visit-color: Maroon;
+$link-color: Maroon;
+$visit-color: BurlyWood;
 $black-color: Black;
+$olive-color: Olive;
+$green-color: Green;
+$dark-sea-green: DarkSeaGreen;
+$olive-drab: OliveDrab;
 $white-color: White;
 $border-color: LightSeaGreen;
 $grey-color: WhiteSmoke;
@@ -153,6 +157,7 @@ textarea.container {
 /* Oct 29, 2011, added some background gradients */
 /* and vertical alignment for table styling to   */
 /* occur only with .main attached to %table      */
+/*this first one is for accordian */
 .main {
 	vertical-align: top;
   	padding: 5px;
@@ -160,33 +165,24 @@ textarea.container {
 	border-width: 3px;
 	border-color: $border-color;
 	font-size: 75%;
+	//font-color: $black-color;
 	tr {
 		vertical-align: top;
 		background: $sky-color; /* for non-css3 browsers */
 
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$light-sky', endColorstr='$white-color'); /* for IE */
-		background: -webkit-gradient(linear, left top, left bottom, from($light-sky), to($white-color)); /* for webkit browsers */
-		background: -moz-linear-gradient(top,  $light-sky,  $white-color); /* for firefox 3.6+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$dark-sea-green', endColorstr='$dark-sea-green'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from($dark-sea-green), to($dark-sea-green)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  $dark-sea-green,  $dark-sea-green); /* for firefox 3.6+ */
 	}
 	th {
 		text-align: center;
 		background: $grey-color; /* for non-css3 browsers */
 
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$grey-color', endColorstr='$white-color'); /* for IE */
-		background: -webkit-gradient(linear, left top, left bottom, from($grey-color), to($white-color)); /* for webkit browsers */
-		background: -moz-linear-gradient(top,  $grey-color,  $white-color); /* for firefox 3.6+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$red-color', endColorstr='$sun-color'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from($red-color), to($sun-color)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  $red-color,  $sun-color); /* for firefox 3.6+ */
 	}
 }
-$link-color: DarkBlue;
-$visit-color: Maroon;
-$black-color: Black;
-$white-color: White;
-$border-color: LightSeaGreen;
-$grey-color: WhiteSmoke;
-$red-color: Crimson;
-$back-color: LemonChiffon;
-$sun-color: LightSalmon;
-$sky-color: PowderBlue;
 /* SIDEBAR (right column)                        */
 .sidebar {
   	width: 20%;
@@ -245,18 +241,19 @@ th .desc {
   	margin-bottom: 1px;
 }
 
-/* SECTION: space between, fonts, padding        */
+/* SECTION: main container space between, fonts, padding        */
 /* the less the margin-top, the more overlap with*/
 /* logo and therefore the logo drives the table  */
 /* top margin.    	background: $back-color;     */
+/* Green OliveDrab   */
 section {
   	margin-top: 15px;
   	padding: 5px;
 	background: $back-color; /* for non-css3 browsers */
 
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$back-color', endColorstr='$sun-color'); /* for IE */
-	background: -webkit-gradient(linear, left top, left bottom, from($back-color), to($sun-color)); /* for webkit browsers */
-	background: -moz-linear-gradient(top,  $black-color,  $sun-color); /* for firefox 3.6+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$olive-drab', endColorstr='$dark-sea-green'); /* for IE */
+	background: -webkit-gradient(linear, left top, left bottom, from($olive-drab), to($dark-sea-green)); /* for webkit browsers */
+	background: -moz-linear-gradient(top,  $olive-drab, $dark-sea-green  ); /* for firefox 3.6+ */
 	font: {
 		size: 100%;
 		color: $black-color;		
@@ -270,7 +267,7 @@ section {
 /* LINKS: General (overrided in nav bar section) */
 /* The following is first example of "nesting"   */
 /* where we nest all the stuff assoc.ed with a   */
-/*
+/**/
 a {
   	color: $link-color;
   	text-decoration: none;
@@ -658,6 +655,9 @@ div.edit {
 }
 #tabs a {
 	color: blue;
+}
+.weapon_fonts {
+	color: $black-color;
 }
 /* not sure what loading color is so experimenting...Not loading as of Oct. 1, so will look for later */
 #loading{

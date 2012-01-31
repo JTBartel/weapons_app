@@ -1,9 +1,9 @@
 / WEAPONS set up the layout
 %h5
  = link_to "Edit Weapon", edit_user_weapon_path(@user)
-%table.profile{:summary => "Weapon information"}
+%table{:summary => "Weapon information"}
  %tr
-  %td.main
+  %td.main.round
    / THIS SECTION IS WHERE YOU PUT YOUR .LINE AND .UNITS 
    .line
     %h1
@@ -14,7 +14,7 @@
      %h3
       %a{:href => "#header-1"} Weapon Basics
      %div
-      #header-1= render 'weapon_basics'
+      #header-1.accordian= render 'weapon_basics'
      %h3
       %a{:href => "#header-2"} Weapon Munitions
      %div
