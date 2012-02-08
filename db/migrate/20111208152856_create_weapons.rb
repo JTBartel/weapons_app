@@ -6,7 +6,7 @@ class CreateWeapons < ActiveRecord::Migration
       t.string    :weapon_nickname
       t.string    :weapon_action
       t.string    :weapon_image
-      t.integer   :caliber
+      t.string    :caliber
       t.string    :caliber_unit
       t.integer   :round_cap
       t.integer   :rate_of_fire
@@ -17,6 +17,8 @@ class CreateWeapons < ActiveRecord::Migration
       t.string    :effective_range_unit
       t.string    :origin_country
       t.integer   :year_made
+      t.boolean   :weapon_approval  , :default => false
+      t.boolean   :submit_name      , :default => false
       t.integer   :user_id
 
       t.timestamps

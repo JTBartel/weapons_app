@@ -1,10 +1,13 @@
+ # We added boolean attributes to weapons for weapons approval, so that any weapons submitted default to "NOT" approved and won't show up on the web site until I apprave it.  I am the only one who is Admin User and only Admin User will see the boolean attribute field that changes the approval...
+# Now, as for routes...there is NO NEED for weapons routing to belong to a user.  Any user will be able to go to whatever weapon pages we allow.  
 WeaponsApp::Application.routes.draw do
 
-  resources :users do
-    resources :weapons
-  end
+  resources :users
   
-  resources :weapons
+  resources :weapons do 
+    resources :gunpics
+  end
+
   
   resources :sessions, :only => [:new, :create, :destroy] 
   match '/signup'       ,         :to => 'users#new'

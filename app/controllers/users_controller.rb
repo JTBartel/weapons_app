@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  # brand new person can create himself, but he has to be an authenticated, existing user to edit/update himself.
   before_filter :authenticate, :only => [:edit, :update]
   before_filter :correct_user, :only => [:edit, :update]
+  # only an admin user can delete a user.
   before_filter :admin_user,   :only => :destroy
   
   def new

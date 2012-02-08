@@ -53,6 +53,8 @@ describe Weapon do
   end
 end
 
+
+
 # == Schema Information
 #
 # Table name: weapons
@@ -63,7 +65,7 @@ end
 #  weapon_nickname      :string(255)
 #  weapon_action        :string(255)
 #  weapon_image         :string(255)
-#  caliber              :integer
+#  caliber              :string(255)
 #  caliber_unit         :string(255)
 #  round_cap            :integer
 #  rate_of_fire         :integer
@@ -74,6 +76,8 @@ end
 #  effective_range_unit :string(255)
 #  origin_country       :string(255)
 #  year_made            :integer
+#  weapon_approval      :boolean         default(FALSE)
+#  submit_name          :boolean         default(FALSE)
 #  user_id              :integer
 #  created_at           :datetime
 #  updated_at           :datetime

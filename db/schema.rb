@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111208152856) do
+ActiveRecord::Schema.define(:version => 20120202153942) do
+
+  create_table "gunpics", :force => true do |t|
+    t.string   "weapon_photo"
+    t.string   "photo_name"
+    t.integer  "weapon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "gunpics", ["weapon_id"], :name => "index_gunpics_on_weapon_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -30,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20111208152856) do
     t.string   "weapon_nickname"
     t.string   "weapon_action"
     t.string   "weapon_image"
-    t.integer  "caliber"
+    t.string   "caliber"
     t.string   "caliber_unit"
     t.integer  "round_cap"
     t.integer  "rate_of_fire"
@@ -41,6 +51,8 @@ ActiveRecord::Schema.define(:version => 20111208152856) do
     t.string   "effective_range_unit"
     t.string   "origin_country"
     t.integer  "year_made"
+    t.boolean  "weapon_approval",      :default => false
+    t.boolean  "submit_name",          :default => false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

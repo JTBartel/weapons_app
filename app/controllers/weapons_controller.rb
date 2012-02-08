@@ -1,5 +1,5 @@
 class WeaponsController < ApplicationController
-  before_filter :authenticate, :only => [:create, :update, :destroy]
+  before_filter :authenticate, :only => [:new, :create, :edit, :update]
     
   def new
     @title = "Add Weapon"
@@ -43,7 +43,7 @@ class WeaponsController < ApplicationController
   def index
     @title = "Weapon Inventory"
     @user = current_user
-    @weapons = Weapon.paginate(:per_page => 10, :page => params[:page])
+    @weapons = Weapon.paginate(:per_page => 10, :page => params[:page]).order("id")
   end
   
   def destroy

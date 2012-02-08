@@ -22,11 +22,11 @@
    %td.smallpadding
     = weapon.weapon_type
    %td.smallpadding
-    = link_to weapon.weapon_name, user_weapon_path(@user, weapon.id)
+    = link_to weapon.weapon_name, weapon_path(weapon.id)
    %td.smallpadding
     = weapon.weapon_action
    %td.smallpadding
     = weapon.year_made
    %td.justcenter
     - if current_user.admin?
-     = link_to "Delete?", user_weapon_path(@user, weapon.id), :confirm => 'Are you sure?', :method => :delete
+     = link_to "Delete?", weapon_path(weapon.id), :confirm => 'Are you sure?', :method => :delete

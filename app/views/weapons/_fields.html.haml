@@ -36,10 +36,10 @@
  = f.label :rate_of_fire, "Rate of Fire"
  %br/
  = f.text_field :rate_of_fire
- /.field
- /= f.label :rof_units, "Rate Of Fire"
- /%br/
- /= f.text_field :rof_units
+ .field
+ = f.label :rof_units, "Rate Of Fire"
+ %br/
+ = f.select(:rof_unit, [['min',"min"], ['sec',"sec"]])
 .field
  = f.label :max_range, "Max Range"
  %br/
@@ -64,6 +64,11 @@
  = f.label :year_made, "Year Made"
  %br/
  = f.text_field :year_made
+- if current_user.admin?
+ .field
+  = f.label :weapon_approval, "Approved"
+  %br/
+  = f.select(:weapon_approval, [['false', "false"], ['true', "true"]])
 .actions
  = f.submit "Add your weapon!"
 

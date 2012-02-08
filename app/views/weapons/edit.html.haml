@@ -1,6 +1,6 @@
 /weapons
 %h1
  = @weapon.weapon_name + "'s Information"
-= form_for @weapon, :url => user_weapon_path(@user), :html => {:multipart => true} do |f|
+= form_for @weapon, :url => weapon_path, :html => {:multipart => true} do |f|
  = render 'shared/error_messages', :object => f.object
  = render 'fields', :f => f

@@ -1,6 +1,6 @@
 %h1 Weapons Inventory
 %h5
- = link_to "Add A New Weapon", new_user_weapon_path(@user)
+ = link_to "Add A New Weapon", new_weapon_path
 .line
  = form_tag weapons_path, :method => 'get' do
   = render 'weapon'
