@@ -16,6 +16,14 @@ class User < ActiveRecord::Base
                      :length       => { :within => 6..40 }
   before_save :encrypt_password
   
+  def self.search(search)
+    if search
+      where('UPPER(name) LIKE UPPER(?)', "%#{search}%")
+    else
+      scoped
+    end
+  end
+  
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end

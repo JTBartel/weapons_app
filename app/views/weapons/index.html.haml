@@ -2,7 +2,9 @@
 %h5
  = link_to "Add A New Weapon", new_weapon_path
 .line
- = form_tag weapons_path, :method => 'get' do
-  = render 'weapon'
+ = form_tag weapons_path, :method => 'get', :id => "sspindexs_search" do
+  = text_field_tag :search, params[:search]
+  = submit_tag "Search for Weapons", :name => nil
+  #sspindexs= render 'weapon'
 /  = text_field_tag :search, params[:search]
 /  = submit_tag "Search for Team Name", :name => nil

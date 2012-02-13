@@ -25,8 +25,20 @@ class Weapon < ActiveRecord::Base
   validates :weapon_type,       :presence     => true,
                                 :length       => { :maximum => 50 }
   validates :user_id,           :presence     => true,
-                                :length       => { :maximum => 150 }                                                                               
+                                :length       => { :maximum => 150 }
+                                                                                                               
+
+  def self.search(search)
+    if search
+      where('UPPER(name) LIKE UPPER(?)', "%#{search}%")
+    else
+      scoped
+    end
+  end
+  
 end
+
+
 
 
 

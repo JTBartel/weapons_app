@@ -1,13 +1,13 @@
 /* default size is 50
-/= hidden_field_tag :direction, params[:direction]
-/= hidden_field_tag :sort, params[:sort]
+= hidden_field_tag :direction, params[:direction]
+= hidden_field_tag :sort, params[:sort]
 .justright= will_paginate @users
 %table.main{:summary => "Users"}
  %tr
   %th.size1of5
    = "Gravatar"
   %th.size1of4
-   = "Name"
+   = sortable "name", "Name"
   %th.size1of4
    = "Fav Weapon"
   %th.size1of10
@@ -28,3 +28,4 @@
    %td.justcenter
     - if current_user.admin?
      = link_to "Delete?", user_path(user.id), :confirm => 'Are you sure?', :method => :delete
+.justright= will_paginate @users

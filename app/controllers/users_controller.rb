@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update]
   # only an admin user can delete a user.
   before_filter :admin_user,   :only => :destroy
+  helper_method :sort_column, :sort_direction
   
   def new
     if current_user
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
 
   def index
     @title = "All users"
-    @users = User.paginate(:per_page => 10, :page => params[:page])
+    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
 
   def show
@@ -72,5 +73,13 @@ class UsersController < ApplicationController
     end
     def admin_user
       redirect_to(root_path) unless current_user.admin?
+    end
+    
+    def sort_column
+      User.column_names.include?(params[:sort]) ? params[:sort] : "name"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

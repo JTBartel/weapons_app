@@ -1,5 +1,6 @@
 class WeaponsController < ApplicationController
   before_filter :authenticate, :only => [:new, :create, :edit, :update]
+  helper_method :sort_column, :sort_direction
     
   def new
     @title = "Add Weapon"
@@ -43,12 +44,19 @@ class WeaponsController < ApplicationController
   def index
     @title = "Weapon Inventory"
     @user = current_user
-    @weapons = Weapon.paginate(:per_page => 10, :page => params[:page]).order("id")
+    @weapons = Weapon.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page]).order("id")
   end
-  
+      
   def destroy
     @weapon = Weapon.destroy(params[:id])
     redirect_to weapons_path, :flash => { :success => "weapon deleted"}
+  end
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "weapon_name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 
 end
