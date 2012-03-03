@@ -1,0 +1,19 @@
+%table.weapon_fonts{:summary => "user public info"}
+ %tr.justcenter
+  %th.size1of4
+   = "User Name"
+  %th.size1of4
+   = "Country"
+  %th.size1of4
+   = "State"
+  %th.size1of4.lastUnit
+   = "Future use"
+ %tr.justcenter
+  %td
+   = @user.name
+  %td
+   /= @user.weapon_name
+  %td
+   /= @user.weapon_nickname
+  %td
+   /= @user.weapon_action

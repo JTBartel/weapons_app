@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120202153942) do
+ActiveRecord::Schema.define(:version => 20120302185841) do
 
   create_table "gunpics", :force => true do |t|
     t.string   "weapon_photo"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(:version => 20120202153942) do
   end
 
   add_index "gunpics", ["weapon_id"], :name => "index_gunpics_on_weapon_id"
+
+  create_table "user_weapons", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "weapon_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_weapons", ["user_id"], :name => "index_user_weapons_on_user_id"
+  add_index "user_weapons", ["weapon_id"], :name => "index_user_weapons_on_weapon_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -34,8 +44,14 @@ ActiveRecord::Schema.define(:version => 20120202153942) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
+  create_table "weapon_types", :force => true do |t|
+    t.string   "type_name"
+    t.string   "type_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "weapons", :force => true do |t|
-    t.string   "weapon_type"
     t.string   "weapon_name"
     t.string   "weapon_nickname"
     t.string   "weapon_action"
@@ -53,11 +69,11 @@ ActiveRecord::Schema.define(:version => 20120202153942) do
     t.integer  "year_made"
     t.boolean  "weapon_approval",      :default => false
     t.boolean  "submit_name",          :default => false
-    t.integer  "user_id"
+    t.integer  "weapon_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "weapons", ["user_id"], :name => "index_weapons_on_user_id"
+  add_index "weapons", ["weapon_type_id"], :name => "index_weapons_on_weapon_type_id"
 
 end

@@ -1,13 +1,10 @@
 /* default size is 50
-= hidden_field_tag :direction, params[:direction]
-= hidden_field_tag :sort, params[:sort]
-.justright= will_paginate @weapons
 %table{:summary => "Weapons"}
  %tr
   %th.size1of5
    = "Image"
   %th.size1of4
-   /= "Type"
+   = "Type"
   %th.size1of4
    = "Name"
   %th.size1of10
@@ -20,7 +17,7 @@
    %td.justleft
     = image_tag weapon.weapon_image_url(:tiny_thumb).to_s, :alt => ""
    %td.smallpadding
-    /= weapon.weapon_type
+    = weapon.weapon_type
    %td.smallpadding
     = link_to weapon.weapon_name, weapon_path(weapon.id)
    %td.smallpadding
@@ -30,4 +27,3 @@
    %td.justcenter
     - if current_user.admin?
      = link_to "Delete?", weapon_path(weapon.id), :confirm => 'Are you sure?', :method => :delete
-.justright= will_paginate @weapons

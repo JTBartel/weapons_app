@@ -1,8 +1,8 @@
 = render 'shared/error_messages', :object => f.object 
 .field
- = f.label :weapon_type, "Weapon Type"
- %br/
- = f.select(:weapon_type, [['Rifle',"Rifle"], ['Assault Rifle',"Assault Rifle"], ['Sub-Machine Gun',"Sub-Machine Gun"], ['Shot Gun',"Shot Gun"], ['Light Machine Gun',"Light Machine Gun"], ['Sniper Rifle',"Sniper Rifle"], ['Handgun',"Handgun"], ['Launcher',"Launcher"]])
+ /= f.label :weapon_type, "Weapon Type"
+ /%br/
+ /= f.select(:weapon_type, [['Rifle',"Rifle"], ['Assault Rifle',"Assault Rifle"], ['Sub-Machine Gun',"Sub-Machine Gun"], ['Shot Gun',"Shot Gun"], ['Light Machine Gun',"Light Machine Gun"], ['Sniper Rifle',"Sniper Rifle"], ['Handgun',"Handgun"], ['Launcher',"Launcher"]])
 .field
  = f.label :weapon_name, "Weapon Name"
  %br/

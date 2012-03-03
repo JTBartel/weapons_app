@@ -53,7 +53,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @title = @user.name    
+    @title = @user.name 
+    #@weapons = @user.weapons
+    @weapons = Weapon.all   
   end
   
   def destroy

@@ -1,7 +1,6 @@
 class CreateWeapons < ActiveRecord::Migration
   def self.up
     create_table  :weapons do |t|
-      t.string    :weapon_type
       t.string    :weapon_name
       t.string    :weapon_nickname
       t.string    :weapon_action
@@ -19,15 +18,15 @@ class CreateWeapons < ActiveRecord::Migration
       t.integer   :year_made
       t.boolean   :weapon_approval  , :default => false
       t.boolean   :submit_name      , :default => false
-      t.integer   :user_id
+      t.integer   :weapon_type_id
 
       t.timestamps
     end
-    add_index :weapons, :user_id
+    add_index :weapons, :weapon_type_id
   end
 
   def self.down
     drop_table :weapons
-    remove_index :weapons, :user_id    
+    remove_index :weapons, :weapon_type_id    
   end
 end

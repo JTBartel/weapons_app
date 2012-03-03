@@ -1,6 +1,5 @@
 class Weapon < ActiveRecord::Base
-  attr_accessible :weapon_type          ,
-                  :weapon_name          ,
+  attr_accessible :weapon_name          ,
                   :weapon_nickname      ,
                   :weapon_action        ,
                   :weapon_image         ,
@@ -14,16 +13,18 @@ class Weapon < ActiveRecord::Base
                   :effective_range      ,
                   :effective_range_unit ,
                   :origin_country       ,
-                  :year_made
-  belongs_to :user
+                  :year_made            ,
+                  :weapon_type_id
+              
+  belongs_to  :weapon_type                
+  has_many  :user_weapons,  :dependent => :destroy 
+  has_many  :users,       :through => :user_weapons
   has_many   :gunpics
   
   mount_uploader :weapon_image, ImageUploader   
   
   validates :weapon_name,       :presence     => true,
                                 :length       => { :maximum => 50 }                                    
-  validates :weapon_type,       :presence     => true,
-                                :length       => { :maximum => 50 }
   validates :user_id,           :presence     => true,
                                 :length       => { :maximum => 150 }
                                                                                                                
@@ -42,12 +43,12 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: weapons
 #
 #  id                   :integer         not null, primary key
-#  weapon_type          :string(255)
 #  weapon_name          :string(255)
 #  weapon_nickname      :string(255)
 #  weapon_action        :string(255)
@@ -65,7 +66,7 @@ end
 #  year_made            :integer
 #  weapon_approval      :boolean         default(FALSE)
 #  submit_name          :boolean         default(FALSE)
-#  user_id              :integer
+#  weapon_type_id       :integer
 #  created_at           :datetime
 #  updated_at           :datetime
 #

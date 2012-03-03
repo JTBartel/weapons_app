@@ -1,43 +1,39 @@
-/ USER
-%table.profile{:summary => "Profile information"}
+/ user show page
+%h5
+ = link_to "Edit My Info", edit_user_path(@user)
+%table{:summary => "User information"}
  %tr
-  %td.main
-   %h1
-    = gravatar_for @user
-    = @user.name
+  %td.main.round
+   / THIS SECTION IS WHERE YOU PUT YOUR .LINE AND .UNITS 
+   .line
+    %h1
+     = gravatar_for @user
+     = @user.name
+     %br/
+   .line
+    #accordion
+     %h3
+      %a{:href => "#header-1"} My Profile
+     %div
+      #header-1.accordian= render 'user_public_info'
+     %h3
+      %a{:href => "#header-2"} My Favorite Weapons
+     %div
+      #header-2= render 'user_favorite_weapons'
   %td.sidebar.round
-   %strong Name
-   = @user.name
-   %br/
+   %strong Future use
    %strong URL
-   = link_to user_path(@user), @user
-.line
- .unit.size1of2.justcenter 
-  = "dsalkfjlckabvrgf"
-  %br/
-  = "dklsdlgkrioghiob5"
- .unit.size1of2.justright
-  = "dsalkfjlckabvrgf"
-  %br/
-  = "dklsdlgkrioghiob5"
-.line
- .unit.size1of5
-  = "dsalkfjlckabvrgf"
-  %br/
-  = "dklsdlgkrioghiob5"
- .unit.size1of5
-  = "dsalkfjlckabvrgf"
-  %br/
-  = "dklsdlgkrioghiob5"
- .unit.size1of5
-  = "dsalkfjlckabvrgf"
-  %br/
-  = "dklsdlgkrioghiob5"
- .unit.size1of10
-  = "dsalkfj"
-  %br/
-  = "dklsb5"
- .unit.size1of5.justcenter.lastUnit
-  = "dsalkfjlckabvrgf"
-  %br/
-  = "dklsdlgkrioghiob5"
+   = "future use"
+/ == Schema Information
+/#
+/# Table name: users
+/#
+/#  id                 :integer         not null, primary key
+/#  name               :string(255)
+/#  email              :string(255)
+/#  encrypted_password :string(255)
+/#  salt               :string(255)
+/#  admin              :boolean         default(FALSE)
+/#  created_at         :datetime
+/#  updated_at         :datetime
+/#

@@ -55,12 +55,12 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: weapons
 #
 #  id                   :integer         not null, primary key
-#  weapon_type          :string(255)
 #  weapon_name          :string(255)
 #  weapon_nickname      :string(255)
 #  weapon_action        :string(255)
@@ -78,7 +78,7 @@ end
 #  year_made            :integer
 #  weapon_approval      :boolean         default(FALSE)
 #  submit_name          :boolean         default(FALSE)
-#  user_id              :integer
+#  weapon_type_id       :integer
 #  created_at           :datetime
 #  updated_at           :datetime
 #
