@@ -14,19 +14,18 @@ class Weapon < ActiveRecord::Base
                   :effective_range_unit ,
                   :origin_country       ,
                   :year_made            ,
-                  :weapon_type_id
+                  :weapon_type_id       ,
+                  :user_ids
               
   belongs_to  :weapon_type                
-  has_many  :user_weapons,  :dependent => :destroy 
-  has_many  :users,       :through => :user_weapons
-  has_many   :gunpics
+  has_many    :user_weapons,  :dependent => :destroy 
+  has_many    :users,       :through => :user_weapons
+  has_many    :gunpics
   
   mount_uploader :weapon_image, ImageUploader   
   
   validates :weapon_name,       :presence     => true,
                                 :length       => { :maximum => 50 }                                    
-  validates :user_id,           :presence     => true,
-                                :length       => { :maximum => 150 }
                                                                                                                
 
   def self.search(search)

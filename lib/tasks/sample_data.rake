@@ -17,48 +17,40 @@ namespace :db do
                    :password => password,
                    :password_confirmation => password)
     end
-  
-  #"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    User.all(:limit => 2).each do |user|
-      1.times do |n|
-        weapontype          = "Rifle"
-        weaponname          = "M1 Garand"
-        weaponnickname      = "Ginger Dinger"
-        weaponaction        = "Semi-Automatic"
-        weaponimage         = "M1Rifle.jpg"
-        caliber             = "30-06"
-        caliberunit         = "cal"
-        roundcap            = 8
-        rateoffire          = 50
-        rofunit             = "min"
-        maxrange            = 1000
-        maxrangeunit        = "yds"
-        effectiverange      = 600
-        effectiverangeunit  = "yds"
-        origincountry       = "U.S.A."
-        weaponyear          = 1936
-        weaponapproval      = true
-        user.weapons.create!( :weapon_type          => weapontype         ,
-                              :weapon_name          => weaponname         ,
-                              :weapon_nickname      => weaponnickname     ,
-                              :weapon_action        => weaponaction       ,
-                              :weapon_image         => weaponimage        ,
-                              :caliber              => caliber            ,
-                              :caliber_unit         => caliberunit        ,
-                              :round_cap            => roundcap           ,
-                              :rate_of_fire         => rateoffire         ,
-                              :rof_unit             => rofunit            ,
-                              :max_range            => maxrange           ,
-                              :max_range_unit       => maxrangeunit       ,
-                              :effective_range      => effectiverange     ,
-                              :effective_range_unit => effectiverangeunit ,
-                              :origin_country       => origincountry      ,  
-                              :year_made            => weaponyear         ,
-                              :weapon_approval      => weaponapproval     )
-                              
-      end
-      55.times do |n|
-        weapontype          = Faker::Name.name + " Type"
+    rifle = WeaponType.create!(:type_name => "Rifle")
+    WeaponType.create!(:type_name => "Sub Machine Gun")
+    WeaponType.create!(:type_name => "Light Machine Gun")
+    WeaponType.create!(:type_name => "Sniper Rifle")
+    WeaponType.create!(:type_name => "Hand Gun")
+    WeaponType.create!(:type_name => "Launcher")
+    WeaponType.create!(:type_name => "Shot Gun")
+    WeaponType.create!(:type_name => "Armor")
+    WeaponType.create!(:type_name => "Sword")
+    WeaponType.create!(:type_name => "Bow")
+    WeaponType.create!(:type_name => "Spear")
+    WeaponType.create!(:type_name => "Tank")
+    WeaponType.create!(:type_name => "Ship")
+    WeaponType.create!(:type_name => "Aircraft")
+    WeaponType.create!(:type_name => "Shields")
+    WeaponType.create!(:type_name => "Other")
+    rifle.weapons.create!(
+      :weapon_name          => "M1 Garand"      ,
+      :weapon_nickname      => "Ginger Dinger"  ,
+      :weapon_action        => "Semi-Automatic" ,
+      :caliber              => "30-06"          ,
+      :caliber_unit         => "cal"            ,
+      :round_cap            => 8                ,
+      :rate_of_fire         => 50               ,
+      :rof_unit             => "min"            ,
+      :max_range            => 1000             ,
+      :max_range_unit       => "yds"            ,
+      :effective_range      => 600              ,
+      :effective_range_unit => "yds"            ,
+      :origin_country       => "U.S.A."         ,  
+      :year_made            => 1936             ,
+      :weapon_approval      => true             )
+WeaponType.all.each do |weapon_type|
+      6.times do |n|
         weaponname          = Faker::Name.name + " Gun"
         weaponnickname      = "Nick" + Faker::Name.name
         weaponaction        = Faker::Name.first_name + " Action"
@@ -74,23 +66,22 @@ namespace :db do
         origincountry       = "U.S.A."
         weaponyear          = 1900 + n
         weaponapproval      = true
-        user.weapons.create!( :weapon_type          => weapontype         ,
-                              :weapon_name          => weaponname         ,
-                              :weapon_nickname      => weaponnickname     ,
-                              :weapon_action        => weaponaction       ,
-                              :caliber              => caliber            ,
-                              :caliber_unit         => caliberunit        ,
-                              :round_cap            => roundcap           ,
-                              :rate_of_fire         => rateoffire         ,
-                              :rof_unit             => rofunit            ,
-                              :max_range            => maxrange           ,
-                              :max_range_unit       => maxrangeunit       ,
-                              :effective_range      => effectiverange     ,
-                              :effective_range_unit => effectiverangeunit ,
-                              :origin_country       => origincountry      ,  
-                              :year_made            => weaponyear         ,
-                              :weapon_approval      => weaponapproval     )
-                              
+        weapon_type.weapons.create!( 
+          :weapon_name          => weaponname         ,
+          :weapon_nickname      => weaponnickname     ,
+          :weapon_action        => weaponaction       ,
+          :caliber              => caliber            ,
+          :caliber_unit         => caliberunit        ,
+          :round_cap            => roundcap           ,
+          :rate_of_fire         => rateoffire         ,
+          :rof_unit             => rofunit            ,
+          :max_range            => maxrange           ,
+          :max_range_unit       => maxrangeunit       ,
+          :effective_range      => effectiverange     ,
+          :effective_range_unit => effectiverangeunit ,
+          :origin_country       => origincountry      ,  
+          :year_made            => weaponyear         ,
+          :weapon_approval      => weaponapproval     )                        
       end
     end
   end

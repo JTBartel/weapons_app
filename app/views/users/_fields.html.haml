@@ -1,21 +1,32 @@
 /user
 = render 'shared/error_messages', :object => f.object 
-.field
- = f.label :name
- %br/
- = f.text_field :name
-.field
- = f.label :email
- %br/
- = f.text_field :email
-.field
- = f.label :password
- %br/
- = f.password_field :password
-.field
- = f.label :password_confirmation, "Confirmation"
- %br/
- = f.password_field :password_confirmation
+.form
+ .line
+  .unit.size1of2
+   = f.label :name
+   %br/
+   = f.text_field :name
+  .unit.size1of2
+   = f.label :email
+   %br/
+   = f.text_field :email
+ .line
+  .unit.size1of2
+   = f.label :password
+   %br/
+   = f.password_field :password
+  .unit.size1of2
+   = f.label :password_confirmation, "Confirmation"
+   %br/
+   = f.password_field :password_confirmation
+ .line
+  %strong Pick Your Favorite Weapons
+ .line
+  .unit.size1of1
+   - Weapon.all.each do |weapon|
+    %fieldset.label_checkbox_pair
+     = check_box_tag :weapon_ids, weapon.id, @user.weapons.include?(weapon), :name => 'user[weapon_ids][]'
+     = f.label :weapon_ids, weapon.weapon_name
 .actions
  - if current_user?(@user)
   = f.submit "Update"
