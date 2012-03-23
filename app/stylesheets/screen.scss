@@ -50,14 +50,15 @@ body{_text-align:center;}/* IE5.5 */
 /* VARIABLES:  this section defines variables    */
 /* FOR COLORS:                                   */
 $link-color: Maroon;
-$visit-color: BurlyWood;
+$visit-color: Peru;
 $black-color: Black;
 $olive-color: Olive;
 $green-color: Green;
 $dark-sea-green: DarkSeaGreen;
+$table-background: Gainsboro;
 $olive-drab: OliveDrab;
 $white-color: White;
-$border-color: LightSeaGreen;
+$border-color: DarkRed;
 $grey-color: WhiteSmoke;
 $red-color: Crimson;
 $back-color: LemonChiffon;
@@ -164,15 +165,15 @@ textarea.container {
 	border-style: solid;
 	border-width: 3px;
 	border-color: $border-color;
-	font-size: 75%;
+	font-size: 90%;
 	//font-color: $black-color;
 	tr {
 		vertical-align: top;
 		background: $sky-color; /* for non-css3 browsers */
 
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$dark-sea-green', endColorstr='$dark-sea-green'); /* for IE */
-		background: -webkit-gradient(linear, left top, left bottom, from($dark-sea-green), to($dark-sea-green)); /* for webkit browsers */
-		background: -moz-linear-gradient(top,  $dark-sea-green,  $dark-sea-green); /* for firefox 3.6+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$table-background', endColorstr='$white-color'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from($table-background), to($white-color)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  $table-background,  $white-color); /* for firefox 3.6+ */
 	}
 	th {
 		text-align: center;

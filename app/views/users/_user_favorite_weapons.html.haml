@@ -19,7 +19,7 @@
    %td.justleft
     = image_tag weapon.weapon_image_url(:tiny_thumb).to_s, :alt => ""
    %td.smallpadding
-    = weapon.weapon_type
+    = weapon.weapon_type.type_name
    %td.smallpadding
     = link_to weapon.weapon_name, weapon_path(weapon.id)
    %td.smallpadding

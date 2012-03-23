@@ -8,13 +8,13 @@
    = "Gravatar"
   %th.size1of4
    = sortable "name", "Name"
+  %th.size1of10
+   = sortable "city", "City"
+  %th.size1of10
+   = sortable "state", "State"
   %th.size1of4
    = "Fav Weapon"
-  %th.size1of10
-   = "future"
-  %th.size1of10
-   = "future"
-  %th.size1of10
+  %th.size1of10.lastUnit
  - for user in @users
   %tr
    %td.justleft
@@ -22,9 +22,11 @@
    %td.smallpadding
     = link_to user.name, user_path(user)
    %td.smallpadding
-    = user.email
+    = user.city
    %td.smallpadding
+    = user.state
    %td.smallpadding
+    = "fut fav gun"
    %td.justcenter
     - if current_user.admin?
      = link_to "Delete?", user_path(user.id), :confirm => 'Are you sure?', :method => :delete

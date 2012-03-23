@@ -30,7 +30,7 @@ class Weapon < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('UPPER(name) LIKE UPPER(?)', "%#{search}%")
+      where('UPPER(weapon_name) LIKE UPPER(?)', "%#{search}%")
     else
       scoped
     end

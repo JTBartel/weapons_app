@@ -2,32 +2,35 @@
 = hidden_field_tag :direction, params[:direction]
 = hidden_field_tag :sort, params[:sort]
 .justright= will_paginate @weapons
-%table{:summary => "Weapons"}
+%table.main{:summary => "Weapons"}
  %tr
   %th.size1of5
    = "Image"
   %th.size1of4
-   /= "Type"
-  %th.size1of4
    = "Name"
+  %th.size1of4
+   = "Type"
   %th.size1of10
    = "Weapon Action"
   %th.size1of10
    = "Yr. Made"
-  %th.size1of10
+  %th.size1of10.lastUnit
  - for weapon in @weapons
   %tr
    %td.justleft
     = image_tag weapon.weapon_image_url(:tiny_thumb).to_s, :alt => ""
    %td.smallpadding
-    /= weapon.weapon_type
-   %td.smallpadding
     = link_to weapon.weapon_name, weapon_path(weapon.id)
+   %td.smallpadding
+    = weapon.weapon_type.type_name
    %td.smallpadding
     = weapon.weapon_action
    %td.smallpadding
     = weapon.year_made
    %td.justcenter
-    - if current_user.admin?
-     = link_to "Delete?", weapon_path(weapon.id), :confirm => 'Are you sure?', :method => :delete
+    - if current_user.nil?
+     = ""
+    - else
+     - if current_user.admin?
+      = link_to "Delete?", weapon_path(weapon.id), :confirm => 'Are you sure?', :method => :delete
 .justright= will_paginate @weapons

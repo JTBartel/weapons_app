@@ -213,7 +213,7 @@ body {
 /* MIXINS: for duplicate codes                   */
 /* none for the moment..............             */
 /* BACKGROUND IMAGE repeated by default.         */
-/* line 73, ../../app/stylesheets/screen.scss */
+/* line 74, ../../app/stylesheets/screen.scss */
 body {
   background-image: url(/images/images.jpg);
   text-align: left;
@@ -224,7 +224,7 @@ body {
 /* the less the margin-top, the more overlap with*/
 /* logo and therefore the logo drives the table  */
 /* top margin. Color changes don't occur here.                                   */
-/* line 83, ../../app/stylesheets/screen.scss */
+/* line 84, ../../app/stylesheets/screen.scss */
 section {
   margin-top: 15px;
   padding: 5px;
@@ -232,7 +232,7 @@ section {
   font-size: 100%;
   font-color: black;
 }
-/* line 91, ../../app/stylesheets/screen.scss */
+/* line 92, ../../app/stylesheets/screen.scss */
 section h1 {
   text-align: center;
 }
@@ -241,7 +241,7 @@ section h1 {
 /* several font names as a fallback for          */
 /* browser incapt., ending with the most         */
 /* generic (Sans-serif or Serif)                 */
-/* line 102, ../../app/stylesheets/screen.scss */
+/* line 103, ../../app/stylesheets/screen.scss */
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
 pre, code, form, fieldset, legend, input, textarea, p,
 blockquote, th, td {
@@ -249,7 +249,7 @@ blockquote, th, td {
 }
 
 /* PARAGRAPH: setting margins for free text p    */
-/* line 109, ../../app/stylesheets/screen.scss */
+/* line 110, ../../app/stylesheets/screen.scss */
 p {
   margin-left: 10px;
   margin-right: 10px;
@@ -260,13 +260,13 @@ p {
 /* CSS CLASSES ***********************************/
 /* CONTAINER:  whole = both sections             */
 /* any padding showing up on outside             */
-/* line 119, ../../app/stylesheets/screen.scss */
+/* line 120, ../../app/stylesheets/screen.scss */
 textarea.container {
   width: 960px;
 }
 
 /* ROUND CORNERS: anything assigned .round       */
-/* line 124, ../../app/stylesheets/screen.scss */
+/* line 125, ../../app/stylesheets/screen.scss */
 .round {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -277,7 +277,7 @@ textarea.container {
 }
 
 /* need a separate class for the logo            */
-/* line 133, ../../app/stylesheets/screen.scss */
+/* line 134, ../../app/stylesheets/screen.scss */
 .logoround {
   -moz-border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -290,7 +290,7 @@ textarea.container {
 /* LOGO:  besides the following styling, the logo*/
 /* also has some details listed in app/helpers/  */
 /* application_helper.rb for class .round        */
-/* line 145, ../../app/stylesheets/screen.scss */
+/* line 146, ../../app/stylesheets/screen.scss */
 .logo {
   float: left;
 }
@@ -298,7 +298,7 @@ textarea.container {
 /* GRAVATAR:  besides the following styling,     */
 /* app/helpers/users_helper.rb includes details  */
 /* for gravatar to be used site wide + .round    */
-/* line 152, ../../app/stylesheets/screen.scss */
+/* line 153, ../../app/stylesheets/screen.scss */
 .gravatar {
   margin-bottom: 1px;
 }
@@ -308,28 +308,28 @@ textarea.container {
 /* and vertical alignment for table styling to   */
 /* occur only with .main attached to %table      */
 /*this first one is for accordian */
-/* line 161, ../../app/stylesheets/screen.scss */
+/* line 162, ../../app/stylesheets/screen.scss */
 .main {
   vertical-align: top;
   padding: 5px;
   border-style: solid;
   border-width: 3px;
-  border-color: LightSeaGreen;
-  font-size: 75%;
+  border-color: DarkRed;
+  font-size: 90%;
 }
-/* line 169, ../../app/stylesheets/screen.scss */
+/* line 170, ../../app/stylesheets/screen.scss */
 .main tr {
   vertical-align: top;
   background: PowderBlue;
   /* for non-css3 browsers */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$dark-sea-green', endColorstr='$dark-sea-green');
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$table-background', endColorstr='$white-color');
   /* for IE */
-  background: -webkit-gradient(linear, left top, left bottom, from(DarkSeaGreen), to(DarkSeaGreen));
+  background: -webkit-gradient(linear, left top, left bottom, from(Gainsboro), to(white));
   /* for webkit browsers */
-  background: -moz-linear-gradient(top, DarkSeaGreen, DarkSeaGreen);
+  background: -moz-linear-gradient(top, Gainsboro, white);
   /* for firefox 3.6+ */
 }
-/* line 177, ../../app/stylesheets/screen.scss */
+/* line 178, ../../app/stylesheets/screen.scss */
 .main th {
   text-align: center;
   background: WhiteSmoke;
@@ -343,14 +343,14 @@ textarea.container {
 }
 
 /* SIDEBAR (right column)                        */
-/* line 187, ../../app/stylesheets/screen.scss */
+/* line 188, ../../app/stylesheets/screen.scss */
 .sidebar {
   width: 20%;
   vertical-align: top;
   padding: 5px;
   border-style: solid;
   border-width: 3px;
-  border-color: LightSeaGreen;
+  border-color: DarkRed;
 }
 
 /* TABLE styling for sortable column arrows      */
@@ -358,59 +358,59 @@ textarea.container {
 /* on a current header. and is passed in the     */
 /* application helper def. with class.           */
 /* same for .asc and .desc                       */
-/* line 201, ../../app/stylesheets/screen.scss */
+/* line 202, ../../app/stylesheets/screen.scss */
 th .current {
   padding-right: 20px;
   background-repeat: no-repeat;
   background-position: right center;
 }
 
-/* line 206, ../../app/stylesheets/screen.scss */
+/* line 207, ../../app/stylesheets/screen.scss */
 th .asc {
   background-image: url(/images/up_arrow.gif);
 }
 
-/* line 209, ../../app/stylesheets/screen.scss */
+/* line 210, ../../app/stylesheets/screen.scss */
 th .desc {
   background-image: url(/images/down_arrow.gif);
 }
 
-/* line 212, ../../app/stylesheets/screen.scss */
+/* line 213, ../../app/stylesheets/screen.scss */
 .justcenter {
   text-align: center;
 }
 
-/* line 215, ../../app/stylesheets/screen.scss */
+/* line 216, ../../app/stylesheets/screen.scss */
 .justleft {
   text-align: left;
 }
 
-/* line 219, ../../app/stylesheets/screen.scss */
+/* line 220, ../../app/stylesheets/screen.scss */
 .justright {
   text-align: right;
 }
 
-/* line 222, ../../app/stylesheets/screen.scss */
+/* line 223, ../../app/stylesheets/screen.scss */
 .verticaltop {
   vertical-align: top;
 }
 
-/* line 225, ../../app/stylesheets/screen.scss */
+/* line 226, ../../app/stylesheets/screen.scss */
 .smallpadding {
   padding: 5px;
 }
 
-/* line 228, ../../app/stylesheets/screen.scss */
+/* line 229, ../../app/stylesheets/screen.scss */
 .nopadding {
   padding: none;
 }
 
-/* line 231, ../../app/stylesheets/screen.scss */
+/* line 232, ../../app/stylesheets/screen.scss */
 .marginbot {
   margin-bottom: 0px;
 }
 
-/* line 234, ../../app/stylesheets/screen.scss */
+/* line 235, ../../app/stylesheets/screen.scss */
 .paddingbot {
   padding-bottom: 0px;
 }
@@ -418,7 +418,7 @@ th .desc {
 /* GRAVATAR:  besides the following styling,     */
 /* app/helpers/users_helper.rb includes details  */
 /* for gravatar to be used site wide + .round    */
-/* line 240, ../../app/stylesheets/screen.scss */
+/* line 241, ../../app/stylesheets/screen.scss */
 .gravatar {
   margin-bottom: 1px;
 }
@@ -428,7 +428,7 @@ th .desc {
 /* logo and therefore the logo drives the table  */
 /* top margin.    	background: $back-color;     */
 /* Green OliveDrab   */
-/* line 249, ../../app/stylesheets/screen.scss */
+/* line 250, ../../app/stylesheets/screen.scss */
 section {
   margin-top: 15px;
   padding: 5px;
@@ -443,7 +443,7 @@ section {
   font-size: 100%;
   font-color: black;
 }
-/* line 261, ../../app/stylesheets/screen.scss */
+/* line 262, ../../app/stylesheets/screen.scss */
 section h1 {
   text-align: center;
 }
@@ -452,22 +452,22 @@ section h1 {
 /* The following is first example of "nesting"   */
 /* where we nest all the stuff assoc.ed with a   */
 /**/
-/* line 271, ../../app/stylesheets/screen.scss */
+/* line 272, ../../app/stylesheets/screen.scss */
 a {
   color: maroon;
   text-decoration: none;
 }
-/* line 274, ../../app/stylesheets/screen.scss */
+/* line 275, ../../app/stylesheets/screen.scss */
 a:hover {
   text-decoration: underline;
 }
-/* line 277, ../../app/stylesheets/screen.scss */
+/* line 278, ../../app/stylesheets/screen.scss */
 a:visited {
-  color: BurlyWood;
+  color: Peru;
 }
 
 /* SIGN UP BUTTON                                */
-/* line 283, ../../app/stylesheets/screen.scss */
+/* line 284, ../../app/stylesheets/screen.scss */
 a.signup_button {
   margin-left: auto;
   margin-right: auto;
@@ -475,7 +475,7 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: white;
-  background: LightSeaGreen;
+  background: DarkRed;
   padding: 10px;
   font-size: 125%;
   font-weight: bold;
@@ -514,7 +514,7 @@ nav ul li a {
 /* saved as a favorite.  Note we are trying dir  */
 /* elements vs id's or classes                   */
 /* use em value = scalable           */
-/* line 331, ../../app/stylesheets/screen.scss */
+/* line 332, ../../app/stylesheets/screen.scss */
 #nav {
   margin: 0px;
   padding: 0px;
@@ -536,7 +536,7 @@ nav ul li a {
   border: solid 3px black;
 }
 
-/* line 351, ../../app/stylesheets/screen.scss */
+/* line 352, ../../app/stylesheets/screen.scss */
 #nav li {
   margin: 0px;
   padding: 0px;
@@ -546,7 +546,7 @@ nav ul li a {
 }
 
 /* main level link */
-/* line 359, ../../app/stylesheets/screen.scss */
+/* line 360, ../../app/stylesheets/screen.scss */
 #nav a {
   font-weight: bold;
   font-size: 90%;
@@ -561,7 +561,7 @@ nav ul li a {
 }
 
 /* main level link hover */
-/* line 372, ../../app/stylesheets/screen.scss */
+/* line 373, ../../app/stylesheets/screen.scss */
 #nav .current a, #nav li:hover > a {
   background: #d1d1d1;
   /* for non-css3 browsers */
@@ -580,7 +580,7 @@ nav ul li a {
 }
 
 /* sub levels link hover */
-/* line 386, ../../app/stylesheets/screen.scss */
+/* line 387, ../../app/stylesheets/screen.scss */
 #nav ul li:hover a, #nav li:hover li a {
   background: none;
   border: none;
@@ -589,7 +589,7 @@ nav ul li a {
   -moz-box-shadow: none;
 }
 
-/* line 393, ../../app/stylesheets/screen.scss */
+/* line 394, ../../app/stylesheets/screen.scss */
 #nav ul a:hover {
   background: #0399d4 !important;
   /* for non-css3 browsers */
@@ -606,7 +606,7 @@ nav ul li a {
 }
 
 /* level 2 list */
-/* line 405, ../../app/stylesheets/screen.scss */
+/* line 406, ../../app/stylesheets/screen.scss */
 #nav ul {
   background: #ddd;
   /* for non-css3 browsers */
@@ -633,33 +633,33 @@ nav ul li a {
 }
 
 /* dropdown */
-/* line 427, ../../app/stylesheets/screen.scss */
+/* line 428, ../../app/stylesheets/screen.scss */
 #nav li:hover > ul {
   display: block;
 }
 
-/* line 430, ../../app/stylesheets/screen.scss */
+/* line 431, ../../app/stylesheets/screen.scss */
 #nav ul li {
   float: none;
   margin: 0;
   padding: 0;
 }
 
-/* line 435, ../../app/stylesheets/screen.scss */
+/* line 436, ../../app/stylesheets/screen.scss */
 #nav ul a {
   font-weight: normal;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
 }
 
 /* level 3+ list */
-/* line 440, ../../app/stylesheets/screen.scss */
+/* line 441, ../../app/stylesheets/screen.scss */
 #nav ul ul {
   left: 181px;
   top: -3px;
 }
 
 /* rounded corners for first and last child */
-/* line 445, ../../app/stylesheets/screen.scss */
+/* line 446, ../../app/stylesheets/screen.scss */
 #nav ul li:first-child > a {
   -webkit-border-top-left-radius: 9px;
   -moz-border-radius-topleft: 9px;
@@ -667,7 +667,7 @@ nav ul li a {
   -moz-border-radius-topright: 9px;
 }
 
-/* line 451, ../../app/stylesheets/screen.scss */
+/* line 452, ../../app/stylesheets/screen.scss */
 #nav ul li:last-child > a {
   -webkit-border-bottom-left-radius: 9px;
   -moz-border-radius-bottomleft: 9px;
@@ -676,7 +676,7 @@ nav ul li a {
 }
 
 /* clearfix */
-/* line 458, ../../app/stylesheets/screen.scss */
+/* line 459, ../../app/stylesheets/screen.scss */
 #nav:after {
   content: ".";
   display: block;
@@ -686,23 +686,23 @@ nav ul li a {
   height: 0;
 }
 
-/* line 466, ../../app/stylesheets/screen.scss */
+/* line 467, ../../app/stylesheets/screen.scss */
 #nav {
   display: inline-block;
 }
 
-/* line 469, ../../app/stylesheets/screen.scss */
+/* line 470, ../../app/stylesheets/screen.scss */
 html[xmlns] #nav {
   display: block;
 }
 
-/* line 472, ../../app/stylesheets/screen.scss */
+/* line 473, ../../app/stylesheets/screen.scss */
 * html #nav {
   height: 1%;
 }
 
 /* FOOTER SECTION: (not nav bar)                 */
-/* line 476, ../../app/stylesheets/screen.scss */
+/* line 477, ../../app/stylesheets/screen.scss */
 footer {
   width: 640px;
   background-color: black;
@@ -714,7 +714,7 @@ footer {
 }
 
 /* FOOTER NAVIGATION BAR                         */
-/* line 487, ../../app/stylesheets/screen.scss */
+/* line 488, ../../app/stylesheets/screen.scss */
 footer nav {
   background-color: BurlyWood;
   text-align: center;
@@ -722,7 +722,7 @@ footer nav {
 }
 
 /* FORMS: specific to the field area with label  */
-/* line 494, ../../app/stylesheets/screen.scss */
+/* line 495, ../../app/stylesheets/screen.scss */
 .form {
   width: 700px;
   margin-left: auto;
@@ -731,7 +731,7 @@ footer nav {
   font-size: 13px;
   padding: none;
 }
-/* line 501, ../../app/stylesheets/screen.scss */
+/* line 502, ../../app/stylesheets/screen.scss */
 .form .line {
   padding-left: 20px;
   padding-right: 20px;
@@ -744,15 +744,15 @@ footer nav {
   background: -moz-linear-gradient(top, PowderBlue, white);
   /* for firefox 3.6+ */
 }
-/* line 510, ../../app/stylesheets/screen.scss */
+/* line 511, ../../app/stylesheets/screen.scss */
 .form .unit.size1of2 {
   font-weight: bold;
 }
-/* line 513, ../../app/stylesheets/screen.scss */
+/* line 514, ../../app/stylesheets/screen.scss */
 .form .unit.size1of1 {
   font-weight: bold;
 }
-/* line 516, ../../app/stylesheets/screen.scss */
+/* line 517, ../../app/stylesheets/screen.scss */
 .form .hint {
   clear: left;
   margin-left: 180px;
@@ -764,7 +764,7 @@ footer nav {
 }
 
 /* FORMS: specific to the text input box         */
-/* line 528, ../../app/stylesheets/screen.scss */
+/* line 529, ../../app/stylesheets/screen.scss */
 input[type="text"], [type="password"] {
   font-family: Arial, Sans-Serif;
   font-size: 13px;
@@ -786,14 +786,14 @@ input[type="text"], [type="password"] {
     background-color: #ffffff;
     border: solid 1px #33677F;
 }*/
-/* line 553, ../../app/stylesheets/screen.scss */
+/* line 554, ../../app/stylesheets/screen.scss */
 div.field, div.actions {
   margin-bottom: 10px;
   margin-left: 25px;
 }
 
 /* FIELD SECTION UNDER THE ERROR COUNT           */
-/* line 559, ../../app/stylesheets/screen.scss */
+/* line 560, ../../app/stylesheets/screen.scss */
 .field_with_errors {
   margin-top: 5px;
   margin-left: 5px;
@@ -801,13 +801,13 @@ div.field, div.actions {
   background-color: Crimson;
   display: table;
 }
-/* line 565, ../../app/stylesheets/screen.scss */
+/* line 566, ../../app/stylesheets/screen.scss */
 .field_with_errors label {
   color: white;
 }
 
 /* ERROR EXPLANATION BOX STYLING                 */
-/* line 571, ../../app/stylesheets/screen.scss */
+/* line 572, ../../app/stylesheets/screen.scss */
 #error_explanation {
   width: 500px;
   border: 2px solid Crimson;
@@ -817,7 +817,7 @@ div.field, div.actions {
   margin-left: 20px;
   background-color: WhiteSmoke;
 }
-/* line 579, ../../app/stylesheets/screen.scss */
+/* line 580, ../../app/stylesheets/screen.scss */
 #error_explanation h2 {
   font-size: 14px;
   text-align: center;
@@ -825,13 +825,13 @@ div.field, div.actions {
   background-color: Crimson;
   color: white;
 }
-/* line 586, ../../app/stylesheets/screen.scss */
+/* line 587, ../../app/stylesheets/screen.scss */
 #error_explanation p {
-  color: BurlyWood;
+  color: Peru;
   margin-bottom: 0;
   padding: 5px;
 }
-/* line 591, ../../app/stylesheets/screen.scss */
+/* line 592, ../../app/stylesheets/screen.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
@@ -839,7 +839,7 @@ div.field, div.actions {
 }
 
 /* TOP/BOTTOM MARGINS OF TEAM LIST               */
-/* line 599, ../../app/stylesheets/screen.scss */
+/* line 600, ../../app/stylesheets/screen.scss */
 ul.users {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -847,20 +847,20 @@ ul.users {
 }
 
 /* LIST.USERS                                    */
-/* line 608, ../../app/stylesheets/screen.scss */
+/* line 609, ../../app/stylesheets/screen.scss */
 li.users {
   list-style-type: none;
   text-align: left;
 }
 
 /* FORM div edit account page margin             */
-/* line 614, ../../app/stylesheets/screen.scss */
+/* line 615, ../../app/stylesheets/screen.scss */
 div.edit {
   margin-left: 25px;
 }
 
 /* CSS for checkboxes                            */
-/* line 619, ../../app/stylesheets/screen.scss */
+/* line 620, ../../app/stylesheets/screen.scss */
 .label_checkbox_pair {
   clear: inherit;
   float: none;
@@ -868,7 +868,7 @@ div.edit {
   margin: 0px;
 }
 
-/* line 625, ../../app/stylesheets/screen.scss */
+/* line 626, ../../app/stylesheets/screen.scss */
 .label_checkbox_pair input {
   /*clear: inherit; */
   float: none;
@@ -876,7 +876,7 @@ div.edit {
   margin-right: 0px;
 }
 
-/* line 631, ../../app/stylesheets/screen.scss */
+/* line 632, ../../app/stylesheets/screen.scss */
 .label_checkbox_pair label {
   clear: inherit;
   display: inline-block;
@@ -888,7 +888,7 @@ div.edit {
 }
 
 /* FullCalendar and Vinsol Full Calendar style.css are incorporated here with some other adjustments such as background color.   Right now border radius is chopping the calendar a little at the very bottom...might eliminate it on the bottom.  removed all the following FC styling troubleshooting events*/
-/* line 643, ../../app/stylesheets/screen.scss */
+/* line 644, ../../app/stylesheets/screen.scss */
 #calendar {
   width: 900px;
   margin: 0 auto;
@@ -899,23 +899,23 @@ div.edit {
   border-radius: 10px;
 }
 
-/* line 653, ../../app/stylesheets/screen.scss */
+/* line 654, ../../app/stylesheets/screen.scss */
 #tabs {
   font-size: 100%;
 }
 
-/* line 656, ../../app/stylesheets/screen.scss */
+/* line 657, ../../app/stylesheets/screen.scss */
 #tabs a {
   color: blue;
 }
 
-/* line 659, ../../app/stylesheets/screen.scss */
+/* line 660, ../../app/stylesheets/screen.scss */
 .weapon_fonts {
   color: black;
 }
 
 /* not sure what loading color is so experimenting...Not loading as of Oct. 1, so will look for later */
-/* line 663, ../../app/stylesheets/screen.scss */
+/* line 664, ../../app/stylesheets/screen.scss */
 #loading {
   position: absolute;
   right: 0px;
@@ -936,53 +936,53 @@ div.edit {
  * version 0.0.4 : Removed width:100% on tables
  * version 0.1.1 : set width 0 on tables to fix an ie6 bug
  */
-/* line 683, ../../app/stylesheets/screen.scss */
+/* line 684, ../../app/stylesheets/screen.scss */
 .ui-timepicker-inline {
   display: inline;
 }
 
-/* line 685, ../../app/stylesheets/screen.scss */
+/* line 686, ../../app/stylesheets/screen.scss */
 #ui-timepicker-div {
   padding: 0.2em;
 }
 
-/* line 686, ../../app/stylesheets/screen.scss */
+/* line 687, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table {
   display: inline-table;
   width: 0;
 }
 
-/* line 687, ../../app/stylesheets/screen.scss */
+/* line 688, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table table {
   margin: 0.15em 0 0 0;
   border-collapse: collapse;
 }
 
-/* line 689, ../../app/stylesheets/screen.scss */
+/* line 690, ../../app/stylesheets/screen.scss */
 .ui-timepicker-hours, .ui-timepicker-minutes {
   padding: 0.2em;
 }
 
-/* line 691, ../../app/stylesheets/screen.scss */
+/* line 692, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table .ui-timepicker-title {
   line-height: 1.8em;
   text-align: center;
 }
 
-/* line 692, ../../app/stylesheets/screen.scss */
+/* line 693, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table td {
   padding: 0.1em;
   width: 2.2em;
 }
 
-/* line 693, ../../app/stylesheets/screen.scss */
+/* line 694, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table th.periods {
   padding: 0.1em;
   width: 2.2em;
 }
 
 /* span for disabled cells */
-/* line 696, ../../app/stylesheets/screen.scss */
+/* line 697, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table td span {
   display: block;
   padding: 0.2em 0.3em 0.2em 0.5em;
@@ -992,7 +992,7 @@ div.edit {
 }
 
 /* anchors for clickable cells */
-/* line 705, ../../app/stylesheets/screen.scss */
+/* line 706, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table td a {
   display: block;
   padding: 0.2em 0.3em 0.2em 0.5em;
@@ -1003,7 +1003,7 @@ div.edit {
 }
 
 /* buttons and button pane styling */
-/* line 716, ../../app/stylesheets/screen.scss */
+/* line 717, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-buttonpane {
   background-image: none;
   margin: .7em 0 0 0;
@@ -1013,7 +1013,7 @@ div.edit {
   border-bottom: 0;
 }
 
-/* line 719, ../../app/stylesheets/screen.scss */
+/* line 720, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-buttonpane button {
   margin: .5em .2em .4em;
   cursor: pointer;
@@ -1023,25 +1023,25 @@ div.edit {
 }
 
 /* The close button */
-/* line 721, ../../app/stylesheets/screen.scss */
+/* line 722, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-close {
   float: right;
 }
 
 /* the now button */
-/* line 724, ../../app/stylesheets/screen.scss */
+/* line 725, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-now {
   float: left;
 }
 
 /* the deselect button */
-/* line 727, ../../app/stylesheets/screen.scss */
+/* line 728, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-deselect {
   float: left;
 }
 
 /* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
-/* line 731, ../../app/stylesheets/screen.scss */
+/* line 732, ../../app/stylesheets/screen.scss */
 .ui-timepicker-cover {
   display: none;
   /*sorry for IE5*/
@@ -1063,7 +1063,7 @@ div.edit {
   /*must have*/
 }
 
-/* line 743, ../../app/stylesheets/screen.scss */
+/* line 744, ../../app/stylesheets/screen.scss */
 span > div#loading {
   position: fixed;
 }
@@ -1075,14 +1075,14 @@ font-size: 16px;
 }
 
 /* PAGINATION styling from http://mislav.uniqpath.com/will_paginate/    */
-/* line 753, ../../app/stylesheets/screen.scss */
+/* line 754, ../../app/stylesheets/screen.scss */
 .digg_pagination {
   background: white;
   cursor: default;
   /* self-clearing method: */
 }
 
-/* line 757, ../../app/stylesheets/screen.scss */
+/* line 758, ../../app/stylesheets/screen.scss */
 .digg_pagination a, .digg_pagination span, .digg_pagination em {
   padding: 0.2em 0.5em;
   display: block;
@@ -1090,14 +1090,14 @@ font-size: 16px;
   margin-right: 1px;
 }
 
-/* line 762, ../../app/stylesheets/screen.scss */
+/* line 763, ../../app/stylesheets/screen.scss */
 .digg_pagination .disabled {
   color: #999999;
   /* color: $sky-color; */
   border: 1px solid #dddddd;
 }
 
-/* line 766, ../../app/stylesheets/screen.scss */
+/* line 767, ../../app/stylesheets/screen.scss */
 .digg_pagination .current {
   font-style: normal;
   font-weight: bold;
@@ -1107,20 +1107,20 @@ font-size: 16px;
   border: 1px solid #2e6ab1;
 }
 
-/* line 773, ../../app/stylesheets/screen.scss */
+/* line 774, ../../app/stylesheets/screen.scss */
 .digg_pagination a {
   text-decoration: none;
   color: #105cb6;
   border: 1px solid #9aafe5;
 }
 
-/* line 777, ../../app/stylesheets/screen.scss */
+/* line 778, ../../app/stylesheets/screen.scss */
 .digg_pagination a:hover, .digg_pagination a:focus {
   color: #000033;
   border-color: #000033;
 }
 
-/* line 780, ../../app/stylesheets/screen.scss */
+/* line 781, ../../app/stylesheets/screen.scss */
 .digg_pagination .page_info {
   background: #2e6ab1;
   color: white;
@@ -1130,14 +1130,14 @@ font-size: 16px;
   text-align: center;
 }
 
-/* line 787, ../../app/stylesheets/screen.scss */
+/* line 788, ../../app/stylesheets/screen.scss */
 .digg_pagination .page_info b {
   color: #000033;
   background: #6aa6ed;
   padding: 0.1em 0.25em;
 }
 
-/* line 791, ../../app/stylesheets/screen.scss */
+/* line 792, ../../app/stylesheets/screen.scss */
 .digg_pagination:after {
   content: ".";
   display: block;
@@ -1146,17 +1146,17 @@ font-size: 16px;
   visibility: hidden;
 }
 
-/* line 797, ../../app/stylesheets/screen.scss */
+/* line 798, ../../app/stylesheets/screen.scss */
 * html .digg_pagination {
   height: 1%;
 }
 
-/* line 799, ../../app/stylesheets/screen.scss */
+/* line 800, ../../app/stylesheets/screen.scss */
 *:first-child + html .digg_pagination {
   overflow: hidden;
 }
 
-/* line 802, ../../app/stylesheets/screen.scss */
+/* line 803, ../../app/stylesheets/screen.scss */
 .apple_pagination {
   background: #f1f1f1;
   border: 1px solid #e5e5e5;
@@ -1164,15 +1164,15 @@ font-size: 16px;
   padding: 1em;
   cursor: default;
 }
-/* line 808, ../../app/stylesheets/screen.scss */
+/* line 809, ../../app/stylesheets/screen.scss */
 .apple_pagination .apple_pagination a, .apple_pagination .apple_pagination span {
   padding: 0.2em 0.3em;
 }
-/* line 810, ../../app/stylesheets/screen.scss */
+/* line 811, ../../app/stylesheets/screen.scss */
 .apple_pagination .apple_pagination .disabled {
   color: #aaaaaa;
 }
-/* line 812, ../../app/stylesheets/screen.scss */
+/* line 813, ../../app/stylesheets/screen.scss */
 .apple_pagination .apple_pagination .current {
   font-style: normal;
   font-weight: bold;
@@ -1186,87 +1186,87 @@ font-size: 16px;
   border-radius: 1em;
   text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px;
 }
-/* line 824, ../../app/stylesheets/screen.scss */
+/* line 825, ../../app/stylesheets/screen.scss */
 .apple_pagination .apple_pagination a {
   text-decoration: none;
   color: black;
 }
-/* line 827, ../../app/stylesheets/screen.scss */
+/* line 828, ../../app/stylesheets/screen.scss */
 .apple_pagination .apple_pagination a:hover, .apple_pagination .apple_pagination a:focus {
   text-decoration: underline;
 }
 
-/* line 831, ../../app/stylesheets/screen.scss */
+/* line 832, ../../app/stylesheets/screen.scss */
 .color_sample_black {
   background: black;
 }
 
-/* line 834, ../../app/stylesheets/screen.scss */
+/* line 835, ../../app/stylesheets/screen.scss */
 .color_sample_blue {
   background: blue;
 }
 
-/* line 837, ../../app/stylesheets/screen.scss */
+/* line 838, ../../app/stylesheets/screen.scss */
 .color_sample_brown {
   background: SaddleBrown;
 }
 
-/* line 840, ../../app/stylesheets/screen.scss */
+/* line 841, ../../app/stylesheets/screen.scss */
 .color_sample_coral {
   background: Tomato;
 }
 
-/* line 843, ../../app/stylesheets/screen.scss */
+/* line 844, ../../app/stylesheets/screen.scss */
 .color_sample_grey {
   background: SlateGrey;
 }
 
-/* line 846, ../../app/stylesheets/screen.scss */
+/* line 847, ../../app/stylesheets/screen.scss */
 .color_sample_light_blue {
   background: SkyBlue;
 }
 
-/* line 849, ../../app/stylesheets/screen.scss */
+/* line 850, ../../app/stylesheets/screen.scss */
 .color_sample_maroon {
   background: maroon;
 }
 
-/* line 852, ../../app/stylesheets/screen.scss */
+/* line 853, ../../app/stylesheets/screen.scss */
 .color_sample_mauve {
   background: MediumVioletRed;
 }
 
-/* line 855, ../../app/stylesheets/screen.scss */
+/* line 856, ../../app/stylesheets/screen.scss */
 .color_sample_ocean {
   background: DeepSkyBlue;
 }
 
-/* line 858, ../../app/stylesheets/screen.scss */
+/* line 859, ../../app/stylesheets/screen.scss */
 .color_sample_olive {
   background: olive;
 }
 
-/* line 861, ../../app/stylesheets/screen.scss */
+/* line 862, ../../app/stylesheets/screen.scss */
 .color_sample_orange {
   background: orange;
 }
 
-/* line 864, ../../app/stylesheets/screen.scss */
+/* line 865, ../../app/stylesheets/screen.scss */
 .color_sample_pink {
   background: Violet;
 }
 
-/* line 867, ../../app/stylesheets/screen.scss */
+/* line 868, ../../app/stylesheets/screen.scss */
 .color_sample_purple {
   background: BlueViolet;
 }
 
-/* line 870, ../../app/stylesheets/screen.scss */
+/* line 871, ../../app/stylesheets/screen.scss */
 .color_sample_salmon {
   background: Salmon;
 }
 
-/* line 873, ../../app/stylesheets/screen.scss */
+/* line 874, ../../app/stylesheets/screen.scss */
 .color_sample_teal {
   background: Teal;
 }
