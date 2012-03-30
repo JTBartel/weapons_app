@@ -160,6 +160,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: users
@@ -169,6 +170,7 @@ end
 #  email              :string(255)
 #  city               :string(255)
 #  state              :string(255)
+#  country            :string(255)
 #  encrypted_password :string(255)
 #  salt               :string(255)
 #  admin              :boolean         default(FALSE)

@@ -36,6 +36,10 @@ class Weapon < ActiveRecord::Base
     end
   end
   
+  def this_weapon_type
+    this_weapon_type = self.weapon_type.type_name
+  end
+  
 end
 
 

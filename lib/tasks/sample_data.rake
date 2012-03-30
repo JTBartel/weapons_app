@@ -7,6 +7,7 @@ namespace :db do
                  :email => "perfectcombo555@aol.com",
                  :city => "Cary",
                  :state => "NC",
+                 :country => "USA",
                  :password => "foobar",
                  :password_confirmation => "foobar")
     admin.toggle!(:admin)
@@ -15,11 +16,17 @@ namespace :db do
       email = "example-#{n+1}@railstutorial.org"
       city = Faker::Address.city
       state = Faker::Address.us_state_abbr
+      #country = Faker::Address.country
+      def rand_country
+        country = ["USA", "China", "Russia", "Italy", "UK", "Germany", "France", "Greece", "Rome"]
+        country[rand(country.size)]
+      end
       password  = "password"
       User.create!(:name => name,
                    :email => email,
                    :city => city,
                    :state => state,
+                   :country => rand_country,
                    :password => password,
                    :password_confirmation => password)
     end

@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :email
       t.string    :city
       t.string    :state
+      t.string    :country
       t.string    :encrypted_password
       t.string    :salt
       t.boolean   :admin, :default => false

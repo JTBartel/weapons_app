@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :city, :state, :password, :password_confirmation, :weapon_ids
+  attr_accessible :name, :email, :city, :state, :country, :password, :password_confirmation, :weapon_ids
   
   has_many  :user_weapons,  :dependent => :destroy 
   has_many  :weapons,       :through => :user_weapons
@@ -62,6 +62,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: users
@@ -71,6 +72,7 @@ end
 #  email              :string(255)
 #  city               :string(255)
 #  state              :string(255)
+#  country            :string(255)
 #  encrypted_password :string(255)
 #  salt               :string(255)
 #  admin              :boolean         default(FALSE)

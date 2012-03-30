@@ -44,7 +44,7 @@ class WeaponsController < ApplicationController
   def index
     @title = "Weapon Inventory"
     @user = current_user
-    @weapons = Weapon.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page]).order("id")
+    @weapons = Weapon.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
   end
       
   def destroy
@@ -52,7 +52,7 @@ class WeaponsController < ApplicationController
     redirect_to weapons_path, :flash => { :success => "weapon deleted"}
   end
   def sort_column
-    User.column_names.include?(params[:sort]) ? params[:sort] : "weapon_name"
+    Weapon.column_names.include?(params[:sort]) ? params[:sort] : "weapon_name"
   end
 
   def sort_direction

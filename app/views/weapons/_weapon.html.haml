@@ -7,13 +7,14 @@
   %th.size1of5
    = "Image"
   %th.size1of4
-   = "Name"
+   = sortable "weapon_name", "Name"
   %th.size1of4
    = "Type"
+   /= sortable "Weapon.this_weapon_type", "Type"
   %th.size1of10
-   = "Weapon Action"
+   = sortable "weapon_action", "Action"
   %th.size1of10
-   = "Yr. Made"
+   = sortable "year_made", "Year"
   %th.size1of10.lastUnit
  - for weapon in @weapons
   %tr
