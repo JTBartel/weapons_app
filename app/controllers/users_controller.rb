@@ -31,6 +31,17 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @weapons = Weapon.all
+    @rifle = WeaponType.where(:type_name => "Rifle").first
+    @smg = WeaponType.where(:type_name => "Sub Machine Gun").first
+    @lmg = WeaponType.where(:type_name => "Light Machine Gun").first
+    @sniper = WeaponType.where(:type_name => "Sniper Rifle").first
+    
+    
+    @rifles = Weapon.where(:weapon_type_id => @rifle)
+    @smgs = Weapon.where(:weapon_type_id => @smg)
+    @lmgs = Weapon.where(:weapon_type_id => @lmg)
+    @snipers = Weapon.where(:weapon_type_id => @sniper)
     @title = "Edit user"
   end
   

@@ -35,11 +35,59 @@
    = f.password_field :password_confirmation
  .line
   %strong Pick Your Favorite Weapons
- .line
-  .unit.size1of1
-   - Weapon.all.each do |weapon|
-    %fieldset.label_checkbox_pair
-     = check_box_tag :weapon_ids, weapon.id, @user.weapons.include?(weapon), :name => 'user[weapon_ids][]'
-     = f.label :weapon_ids, weapon.weapon_name
- .actions
-  = f.submit "Update"
+  %br
+  #accordion
+   %h3
+    %a{:href => "#header1"} Rifles
+   %div
+    #header-1= render 'rifle_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Sub Machine Guns
+   %div
+    #header-1= render 'smg_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Light Machine Guns
+   %div
+    #header-1= render 'lmg_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Sniper Rifles
+   %div
+    #header-1= render 'sniper_checkboxes', :f => f
+/   %h3
+/    %a{:href => "#header1"} Hand Guns
+/   %div
+/    #header-1= render 'hand_checkboxes', :f => f
+/   %h3
+/    %a{:href => "#header1"} Launchers
+/   %div
+/    #header-1= render 'launchers_checkboxes', :f => f
+/   %h3
+/    %a{:href => "#header1"} Shot Guns
+/   %div
+/    #header-1= render 'shotgun_checkboxes', :f => f
+/   %h3
+/    %a{:href => "#header1"} Armor
+/   %div
+/    #header-1= render 'armor_checkboxes', :f => f
+/ .line
+/  .unit.size1of1
+/   - @weapons.each do |weapon|
+/    %fieldset.label_checkbox_pair
+/     = check_box_tag :weapon_ids, weapon.id, @user.weapons.include?(weapon), :name => 'user[weapon_ids][]'
+/     = f.label :weapon_ids, weapon.weapon_name
+.actions
+ = f.submit "Update"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
