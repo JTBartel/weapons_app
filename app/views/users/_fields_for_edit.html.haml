@@ -53,6 +53,9 @@
     %a{:href => "#header1"} Sniper Rifles
    %div
     #header-1= render 'sniper_checkboxes', :f => f
+   %br
+  .actions
+   = f.submit "Update"
 /   %h3
 /    %a{:href => "#header1"} Hand Guns
 /   %div
@@ -75,8 +78,6 @@
 /    %fieldset.label_checkbox_pair
 /     = check_box_tag :weapon_ids, weapon.id, @user.weapons.include?(weapon), :name => 'user[weapon_ids][]'
 /     = f.label :weapon_ids, weapon.weapon_name
-.actions
- = f.submit "Update"
 
 
 

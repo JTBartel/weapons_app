@@ -38,10 +38,10 @@ class UsersController < ApplicationController
     @sniper = WeaponType.where(:type_name => "Sniper Rifle").first
     
     
-    @rifles = Weapon.where(:weapon_type_id => @rifle)
-    @smgs = Weapon.where(:weapon_type_id => @smg)
-    @lmgs = Weapon.where(:weapon_type_id => @lmg)
-    @snipers = Weapon.where(:weapon_type_id => @sniper)
+    @rifles = Weapon.where(:weapon_type_id => @rifle).order("weapon_name")
+    @smgs = Weapon.where(:weapon_type_id => @smg).order("weapon_name")
+    @lmgs = Weapon.where(:weapon_type_id => @lmg).order("weapon_name")
+    @snipers = Weapon.where(:weapon_type_id => @sniper).order("weapon_name")
     @title = "Edit user"
   end
   

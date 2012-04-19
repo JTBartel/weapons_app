@@ -170,7 +170,10 @@ textarea.container {
 	tr {
 		vertical-align: top;
 		background: $sky-color; /* for non-css3 browsers */
-
+		color: $red-color;
+		a {
+			color: $link-color;
+		}
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$table-background', endColorstr='$white-color'); /* for IE */
 		background: -webkit-gradient(linear, left top, left bottom, from($table-background), to($white-color)); /* for webkit browsers */
 		background: -moz-linear-gradient(top,  $table-background,  $white-color); /* for firefox 3.6+ */
@@ -178,7 +181,7 @@ textarea.container {
 	th {
 		text-align: center;
 		background: $grey-color; /* for non-css3 browsers */
-
+		color: $white-color;
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$red-color', endColorstr='$sun-color'); /* for IE */
 		background: -webkit-gradient(linear, left top, left bottom, from($red-color), to($sun-color)); /* for webkit browsers */
 		background: -moz-linear-gradient(top,  $red-color,  $sun-color); /* for firefox 3.6+ */
@@ -502,11 +505,14 @@ footer nav {
 	.line {
 		padding-left: 20px;
 		padding-right: 20px;
+		//background: $sky-color; /* for non-css3 browsers */
 		background: $sky-color; /* for non-css3 browsers */
-
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$sky-color', endColorstr='$white-color'); /* for IE */
-		background: -webkit-gradient(linear, left top, left bottom, from($sky-color), to($white-color)); /* for webkit browsers */
-		background: -moz-linear-gradient(top,  $sky-color,  $white-color); /* for firefox 3.6+ */
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$table-background', endColorstr='$white-color'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from($table-background), to($white-color)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  $table-background,  $white-color); /* for firefox 3.6+ */
+		//filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$sky-color', endColorstr='$white-color'); /* for IE */
+		//background: -webkit-gradient(linear, left top, left bottom, from($sky-color), to($white-color)); /* for webkit browsers */
+		//background: -moz-linear-gradient(top,  $sky-color,  $white-color); /* for firefox 3.6+ */
 	}
 	.unit.size1of2 {
 		font-weight: bold;
@@ -637,7 +643,12 @@ div.edit {
 	float: none;
 	margin-left: 0px;
 	width: 170px;
+	a {
+		color: $link-color;
+		font-size: 80%;
+	}
 }
+
 
 /* FullCalendar and Vinsol Full Calendar style.css are incorporated here with some other adjustments such as background color.   Right now border radius is chopping the calendar a little at the very bottom...might eliminate it on the bottom.  removed all the following FC styling troubleshooting events*/
 
@@ -751,83 +762,6 @@ font-size: 16px;
 }
 
 /* PAGINATION styling from http://mislav.uniqpath.com/will_paginate/    */
-.digg_pagination {
-  background: white;
-  cursor: default;
-  /* self-clearing method: */ }
-  .digg_pagination a, .digg_pagination span, .digg_pagination em {
-    padding: 0.2em 0.5em;
-    display: block;
-    float: right;
-    margin-right: 1px; }
-  .digg_pagination .disabled {
-    color: #999999;
-	/* color: $sky-color; */
-    border: 1px solid #dddddd; }
-  .digg_pagination .current {
-    font-style: normal;
-    font-weight: bold;
-    background: #2e6ab1;
-	/* background: $sky-color; */
-    color: white;
-    border: 1px solid #2e6ab1; }
-  .digg_pagination a {
-    text-decoration: none;
-    color: #105cb6;
-    border: 1px solid #9aafe5; }
-    .digg_pagination a:hover, .digg_pagination a:focus {
-      color: #000033;
-      border-color: #000033; }
-  .digg_pagination .page_info {
-    background: #2e6ab1;
-    color: white;
-    padding: 0.4em 0.6em;
-    width: 22em;
-    margin-bottom: 0.3em;
-    text-align: center; }
-    .digg_pagination .page_info b {
-      color: #000033;
-      background: #6aa6ed;
-      padding: 0.1em 0.25em; }
-  .digg_pagination:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  * html .digg_pagination {
-    height: 1%; }
-  *:first-child + html .digg_pagination {
-    overflow: hidden; }
-
-.apple_pagination {
-  background: #f1f1f1;
-  border: 1px solid #e5e5e5;
-  text-align: right;
-  padding: 1em;
-  cursor: default;
-  .apple_pagination a, .apple_pagination span {
-    padding: 0.2em 0.3em; }
-  .apple_pagination .disabled {
-    color: #aaaaaa; }
-  .apple_pagination .current {
-    font-style: normal;
-    font-weight: bold;
-    background-color: #bebebe;
-    display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    line-height: 1.5;
-    -moz-border-radius: 1em;
-    -webkit-border-radius: 1em;
-    border-radius: 1em;
-    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
-  .apple_pagination a {
-    text-decoration: none;
-    color: black; }
-    .apple_pagination a:hover, .apple_pagination a:focus {
-      text-decoration: underline; }
-}
 
 .color_sample_black {
 	background: black;
