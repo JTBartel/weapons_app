@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
                      :length       => { :within => 6..40 }
   before_save :encrypt_password
   
+  def add_favorite_weapon(weapon)
+    self.weapons << weapon
+    #flash[:success] = "Weapon added to your favorites!"
+  end
   def self.search(search)
     if search
       where('UPPER(name) LIKE UPPER(?)', "%#{search}%")

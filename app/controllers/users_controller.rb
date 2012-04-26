@@ -36,12 +36,35 @@ class UsersController < ApplicationController
     @smg = WeaponType.where(:type_name => "Sub Machine Gun").first
     @lmg = WeaponType.where(:type_name => "Light Machine Gun").first
     @sniper = WeaponType.where(:type_name => "Sniper Rifle").first
-    
-    
+    @handgun = WeaponType.where(:type_name => "Hand Gun").first
+    @launcher = WeaponType.where(:type_name => "Launcher").first
+    @shotgun = WeaponType.where(:type_name => "Shot Gun").first
+    @armor = WeaponType.where(:type_name => "Armor").first
+    @sword = WeaponType.where(:type_name => "Sword").first
+    @bow = WeaponType.where(:type_name => "Bow").first
+    @spear = WeaponType.where(:type_name => "Spear").first
+    @tank = WeaponType.where(:type_name => "Tank").first
+    @ship = WeaponType.where(:type_name => "Ship").first
+    @aircraft = WeaponType.where(:type_name => "Aircraft").first
+    @shields = WeaponType.where(:type_name => "Shields").first
+    @other = WeaponType.where(:type_name => "Other").first
+#--------------------------------------------------------------------------    
     @rifles = Weapon.where(:weapon_type_id => @rifle).order("weapon_name")
     @smgs = Weapon.where(:weapon_type_id => @smg).order("weapon_name")
     @lmgs = Weapon.where(:weapon_type_id => @lmg).order("weapon_name")
     @snipers = Weapon.where(:weapon_type_id => @sniper).order("weapon_name")
+    @handguns = Weapon.where(:weapon_type_id => @handgun).order("weapon_name")
+    @launchers = Weapon.where(:weapon_type_id => @launcher).order("weapon_name")
+    @shotguns = Weapon.where(:weapon_type_id => @shotgun).order("weapon_name")
+    @armors = Weapon.where(:weapon_type_id => @armor).order("weapon_name")
+    @swords = Weapon.where(:weapon_type_id => @sword).order("weapon_name")
+    @bows = Weapon.where(:weapon_type_id => @bow).order("weapon_name")
+    @spears = Weapon.where(:weapon_type_id => @spear).order("weapon_name")
+    @tanks = Weapon.where(:weapon_type_id => @tank).order("weapon_name")
+    @ships = Weapon.where(:weapon_type_id => @ship).order("weapon_name")
+    @aircrafts = Weapon.where(:weapon_type_id => @aircraft).order("weapon_name")
+    @shields = Weapon.where(:weapon_type_id => @shields).order("weapon_name")
+    @others = Weapon.where(:weapon_type_id => @other).order("weapon_name")
     @title = "Edit user"
   end
   
@@ -63,7 +86,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id])    
     @title = @user.name 
     @weapons = @user.weapons 
   end

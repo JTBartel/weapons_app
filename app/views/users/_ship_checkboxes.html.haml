@@ -1,0 +1,6 @@
+.line
+ .unit.size1of1
+  - @ships.each do |weapon|
+   %fieldset.label_checkbox_pair
+    = check_box_tag :weapon_ids, weapon.id, @user.weapons.include?(weapon), :name => 'user[weapon_ids][]'
+    = f.label :weapon_ids, (link_to weapon.weapon_name, weapon_path(weapon.id))

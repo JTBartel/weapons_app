@@ -53,32 +53,57 @@
     %a{:href => "#header1"} Sniper Rifles
    %div
     #header-1= render 'sniper_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Hand Guns
+   %div
+    #header-1= render 'handgun_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Launchers
+   %div
+    #header-1= render 'launchers_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Shot Guns
+   %div
+    #header-1= render 'shotgun_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Armor
+   %div
+    #header-1= render 'armor_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Sword
+   %div
+    #header-1= render 'sword_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Bow
+   %div
+    #header-1= render 'bow_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Spear
+   %div
+    #header-1= render 'spear_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Tank
+   %div
+    #header-1= render 'tank_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Ship
+   %div
+    #header-1= render 'ship_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Aircraft
+   %div
+    #header-1= render 'aircraft_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Shields
+   %div
+    #header-1= render 'shields_checkboxes', :f => f
+   %h3
+    %a{:href => "#header1"} Other
+   %div
+    #header-1= render 'other_checkboxes', :f => f
    %br
   .actions
    = f.submit "Update"
-/   %h3
-/    %a{:href => "#header1"} Hand Guns
-/   %div
-/    #header-1= render 'hand_checkboxes', :f => f
-/   %h3
-/    %a{:href => "#header1"} Launchers
-/   %div
-/    #header-1= render 'launchers_checkboxes', :f => f
-/   %h3
-/    %a{:href => "#header1"} Shot Guns
-/   %div
-/    #header-1= render 'shotgun_checkboxes', :f => f
-/   %h3
-/    %a{:href => "#header1"} Armor
-/   %div
-/    #header-1= render 'armor_checkboxes', :f => f
-/ .line
-/  .unit.size1of1
-/   - @weapons.each do |weapon|
-/    %fieldset.label_checkbox_pair
-/     = check_box_tag :weapon_ids, weapon.id, @user.weapons.include?(weapon), :name => 'user[weapon_ids][]'
-/     = f.label :weapon_ids, weapon.weapon_name
-
 
 
 

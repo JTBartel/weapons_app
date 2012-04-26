@@ -1,0 +1,27 @@
+/* THIS ONE FOR THE USER */
+= render 'shared/error_messages', :object => f.object 
+.form
+ .line
+  .unit.size1of2
+   = f.label :password
+   %br/
+   = f.password_field :password
+  .unit.size1of2
+   = f.label :password_confirmation, "Confirmation"
+   %br/
+   = f.password_field :password_confirmation
+ .line
+  .unit.size1of2
+   - @weapons.each do |weapon|
+    %fieldset.label_checkbox_pair
+     = check_box_tag :weapon_ids, weapon.id, @user.weapons.include?(weapon), :name => 'user[weapon_ids][]'
+     = f.label :weapon_ids, (weapon.weapon_name)
+ .line
+  .unit.size1of2
+   = f.text_field @user.weapons, :value => @weapon
+   /= f.text_field :weapon_ids, :value => @weapon.id
+   /= check_box_tag :weapon_ids, @weapon.id, @user.weapons.include?(@weapon.id), :name => 'user[weapon_ids][]'
+  .actions
+   = f.submit "Update"
+
+/ {:style => "display:none"}

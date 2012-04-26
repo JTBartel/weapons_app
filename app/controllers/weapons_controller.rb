@@ -22,6 +22,9 @@ class WeaponsController < ApplicationController
   def show
     @title = "Weapon Page"
     @weapon = Weapon.find(params[:id])
+    @weapons = Weapon.all
+    @user = current_user
+    @user_weapons = @user.weapons
   end
 
   def edit
