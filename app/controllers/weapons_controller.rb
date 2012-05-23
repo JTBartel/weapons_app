@@ -35,6 +35,7 @@ class WeaponsController < ApplicationController
   
   def update
     @user = current_user
+    @user_weapons = @user.weapons
     @weapon  = Weapon.update(params[:id], params[:weapon])
     if @weapon.update_attributes(params[:weapon])
       flash[:success] = "Weapon Updated!"

@@ -16,9 +16,12 @@ $(function() {
 	$("#sspindexs th a, #sspindexs .pagination a").live("click", function() {
 	   	$.getScript(this.href);
 	   	return false;
-	 });
-	 $("#sspindexs_search input").keyup(function() {
-	   	$.get($("#sspindexs_search").attr("action"), 		 $("#sspindexs_search").serialize(), null, "script");
+	});
+	$("#sspindexs_search input").keyup(function() {
+		$.get($("#sspindexs_search").attr("action"), 		 $("#sspindexs_search").serialize(), null, "script");
 	   	return false;
-	 });
+	});
+	$('#add_favorite').click(function() {
+		$("#favorite_weapon_form").toggle(this.clicked);
+	});
 });

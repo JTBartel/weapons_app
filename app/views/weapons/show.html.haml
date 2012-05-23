@@ -4,18 +4,18 @@
   /= link_to "Add to Favorites", @user, :method => @user.add_favorite_weapon(@weapon), :confirm => "Are you sure?"
  .unit.size1of3
   #add_favorite
-   - if @user_weapons.where(:weapon_name => @weapon.weapon_name).nil?
-    = link_to "Add to Favorites"
+   - if @user_weapons.where(:weapon_name => @weapon.weapon_name).count == 0
+    = submit_tag "Add to Favorites"
     /, @user, :method => @user.add_favorite_weapon(@weapon), :confirm => "Are you sure?"
    - else
     = ""
  .unit.size1of3.lastUnit
   = link_to "Edit Weapon", edit_weapon_path(@weapon)
-/.line
-/ .unit.size1of1
-/  #favorite_weapon_form
-/   = form_for(@user) do |f|
-/    = render 'users/fields_for_favorite', :f => f
+.line
+ .unit.size1of1
+  #favorite_weapon_form{:style => "display:none"}
+   = form_for(@user) do |f|
+    = render 'users/fields_for_favorite', :f => f
 %table{:summary => "Weapon information"}
  %tr
   %td.main.round
