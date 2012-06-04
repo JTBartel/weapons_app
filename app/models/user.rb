@@ -17,6 +17,12 @@ class User < ActiveRecord::Base
                      :length       => { :within => 6..40 }
   before_save :encrypt_password
   
+  #################################################################
+  def add_as_favoite(weapon)
+    @weapon = weapon
+    self.weapons << @weapon
+    @user.save!
+  end
   def add_favorite_weapon(weapon)
     self.weapons << weapon
     #flash[:success] = "Weapon added to your favorites!"

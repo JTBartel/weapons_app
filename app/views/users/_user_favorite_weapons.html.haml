@@ -17,6 +17,7 @@
  - for weapon in @weapons
   %tr
    %td.justleft
+    = weapon.id
     = image_tag weapon.weapon_image_url(:tiny_thumb).to_s, :alt => ""
    %td.smallpadding
     = weapon.weapon_type.type_name

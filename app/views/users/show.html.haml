@@ -15,11 +15,13 @@
      %h3
       %a{:href => "#header-1"} My Profile
      %div
-      #header-1.accordian= render 'user_public_info'
+      #header-1
+       = render 'user_public_info'
      %h3
       %a{:href => "#header-2"} My Favorite Weapons
      %div
-      #header-2= render 'user_favorite_weapons'
+      #header-2
+       = render 'user_favorite_weapons'
   %td.sidebar.round
    %strong Future use
    %strong URL

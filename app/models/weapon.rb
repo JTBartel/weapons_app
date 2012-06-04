@@ -28,6 +28,13 @@ class Weapon < ActiveRecord::Base
                                 :length       => { :maximum => 50 }                                    
                                                                                                                
 
+  #################################################################
+  #def add_as_favoite(user)
+  #  @user = user
+  #  @weapon = self
+  #  @user.weapons << @weapon
+  #  @user.save!
+  #end
   def self.search(search)
     if search
       where('UPPER(weapon_name) LIKE UPPER(?)', "%#{search}%")

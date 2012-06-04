@@ -1,0 +1,22 @@
+/* FOR ADDING THE PRESENT WEAPON SHOW PAGE WEAPON TO USER FAVORITE */
+= render 'shared/error_messages', :object => f.object 
+.form
+ .line
+  .unit.size1of2
+   = f.label :password
+   %br/
+   = f.password_field :password
+  .unit.size1of2
+   = f.label :password_confirmation, "Confirmation"
+   %br/
+   = f.password_field :password_confirmation
+ .line
+  .unit.size1of2
+   = content_tag(:div, @weapon.weapon_name, :weaon_id => @weapon.id, :class => 'favorite_weapon_form')
+  .unit.size1of2
+   = "Changing your profile requires password and confirmation"
+   /= check_box_tag :weapon_ids, @weapon, @user.weapons.include?(@weapon), :name => 'user[weapon_ids][]'
+   /= f.label :weapon_ids, (link_to weapon.weapon_name, weapon_path(weapon.id))
+ .line
+  .actions
+   = f.submit "Add to your Favorites!"

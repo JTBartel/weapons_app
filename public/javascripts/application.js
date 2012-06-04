@@ -6,7 +6,7 @@ $(function() {
 	$("#tabs2").tabs({ fx: { opacity: 'toggle' } });
 	$("#tabs3").tabs({ fx: { opacity: 'toggle' } });
 	$("#slider").slider();
-	$("#accordion").accordion({ active: false, collapsible: true });
+	$("#accordion").accordion({ collapsible: true, autoHeight: false });
 	/* 3 button types, element, submit and anchor */
 	/* $( "input:submit, a, button", "#button" ).button();
 	$( "a", ".demo" ).click(function() { return false; });

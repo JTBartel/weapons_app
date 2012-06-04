@@ -14,8 +14,9 @@
 .line
  .unit.size1of1
   #favorite_weapon_form{:style => "display:none"}
-   = form_for(@user) do |f|
-    = render 'users/fields_for_favorite', :f => f
+   = form_for @user, :controller => 'users', :action => 'update', :remote=> true, :url => @user, :html => { :id => 'add_favorite_weapon' } do |f|
+    /= render 'users/fields_for_favorite', :f => f
+    = render 'fields_add_this_weapon', :f => f
 %table{:summary => "Weapon information"}
  %tr
   %td.main.round
