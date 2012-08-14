@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   # brand new person can create himself, but he has to be an authenticated, existing user to edit/update himself.
-  before_filter :authenticate, :only => [:edit, :update]
-  before_filter :correct_user, :only => [:edit, :update]
+  before_filter :signed_in_user, only: [:edit, :update]
+  before_filter :authenticate  , :only => [:edit, :update]
+  before_filter :correct_user  , :only => [:edit, :update]
   # only an admin user can delete a user.
   before_filter :admin_user,   :only => :destroy
   helper_method :sort_column, :sort_direction
@@ -86,7 +87,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])    
+    @user = User.find(params[:id]) 
+    @micropost = @user.microposts.new
+    @microposts = @user.microposts.paginate(:per_page => 8, page: params[:page])   
     @title = @user.name 
     @weapons = @user.weapons 
   end

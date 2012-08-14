@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   
   has_many  :user_weapons,  :dependent => :destroy 
   has_many  :weapons,       :through => :user_weapons
+  has_many  :microposts,    :dependent => :destroy 
   
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

@@ -3,6 +3,7 @@
 WeaponsApp::Application.routes.draw do
 
   resources :users
+  resources :microposts, only: [:create, :destroy]
   
   resources :weapons do 
     resources :gunpics

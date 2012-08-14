@@ -1,0 +1,9 @@
+%a{:href => user_path(current_user)}
+ .justcenter
+  = gravatar_for @user, size: 75
+%h1.justcenter
+ = @user.name
+/%span
+/  = link_to "view my profile", @user
+/%span
+/  = pluralize(@user.microposts.count, "micropost")

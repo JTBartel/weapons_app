@@ -898,8 +898,41 @@ div.edit {
   font-size: 80%;
 }
 
+/* microposts */
+/* line 653, ../../app/stylesheets/screen.scss */
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+/* line 657, ../../app/stylesheets/screen.scss */
+.microposts li {
+  padding: 10px 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+/* line 662, ../../app/stylesheets/screen.scss */
+.content {
+  display: block;
+}
+
+/* line 665, ../../app/stylesheets/screen.scss */
+.timestamp {
+  color: WhiteSmoke;
+}
+
+/* for tutorial, this moved the gravatar to the left margin
+/*.gravatar {
+  float: left;
+  margin-right: 10px;
+}*/
+/* line 674, ../../app/stylesheets/screen.scss */
+aside textarea {
+  height: 100px;
+  margin-bottom: 5px;
+}
+
 /* FullCalendar and Vinsol Full Calendar style.css are incorporated here with some other adjustments such as background color.   Right now border radius is chopping the calendar a little at the very bottom...might eliminate it on the bottom.  removed all the following FC styling troubleshooting events*/
-/* line 655, ../../app/stylesheets/screen.scss */
+/* line 682, ../../app/stylesheets/screen.scss */
 #calendar {
   width: 900px;
   margin: 0 auto;
@@ -910,23 +943,23 @@ div.edit {
   border-radius: 10px;
 }
 
-/* line 665, ../../app/stylesheets/screen.scss */
+/* line 692, ../../app/stylesheets/screen.scss */
 #tabs {
   font-size: 100%;
 }
 
-/* line 668, ../../app/stylesheets/screen.scss */
+/* line 695, ../../app/stylesheets/screen.scss */
 #tabs a {
   color: blue;
 }
 
-/* line 671, ../../app/stylesheets/screen.scss */
+/* line 698, ../../app/stylesheets/screen.scss */
 .weapon_fonts {
   color: black;
 }
 
 /* not sure what loading color is so experimenting...Not loading as of Oct. 1, so will look for later */
-/* line 675, ../../app/stylesheets/screen.scss */
+/* line 702, ../../app/stylesheets/screen.scss */
 #loading {
   position: absolute;
   right: 0px;
@@ -947,53 +980,53 @@ div.edit {
  * version 0.0.4 : Removed width:100% on tables
  * version 0.1.1 : set width 0 on tables to fix an ie6 bug
  */
-/* line 695, ../../app/stylesheets/screen.scss */
+/* line 722, ../../app/stylesheets/screen.scss */
 .ui-timepicker-inline {
   display: inline;
 }
 
-/* line 697, ../../app/stylesheets/screen.scss */
+/* line 724, ../../app/stylesheets/screen.scss */
 #ui-timepicker-div {
   padding: 0.2em;
 }
 
-/* line 698, ../../app/stylesheets/screen.scss */
+/* line 725, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table {
   display: inline-table;
   width: 0;
 }
 
-/* line 699, ../../app/stylesheets/screen.scss */
+/* line 726, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table table {
   margin: 0.15em 0 0 0;
   border-collapse: collapse;
 }
 
-/* line 701, ../../app/stylesheets/screen.scss */
+/* line 728, ../../app/stylesheets/screen.scss */
 .ui-timepicker-hours, .ui-timepicker-minutes {
   padding: 0.2em;
 }
 
-/* line 703, ../../app/stylesheets/screen.scss */
+/* line 730, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table .ui-timepicker-title {
   line-height: 1.8em;
   text-align: center;
 }
 
-/* line 704, ../../app/stylesheets/screen.scss */
+/* line 731, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table td {
   padding: 0.1em;
   width: 2.2em;
 }
 
-/* line 705, ../../app/stylesheets/screen.scss */
+/* line 732, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table th.periods {
   padding: 0.1em;
   width: 2.2em;
 }
 
 /* span for disabled cells */
-/* line 708, ../../app/stylesheets/screen.scss */
+/* line 735, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table td span {
   display: block;
   padding: 0.2em 0.3em 0.2em 0.5em;
@@ -1003,7 +1036,7 @@ div.edit {
 }
 
 /* anchors for clickable cells */
-/* line 717, ../../app/stylesheets/screen.scss */
+/* line 744, ../../app/stylesheets/screen.scss */
 .ui-timepicker-table td a {
   display: block;
   padding: 0.2em 0.3em 0.2em 0.5em;
@@ -1014,7 +1047,7 @@ div.edit {
 }
 
 /* buttons and button pane styling */
-/* line 728, ../../app/stylesheets/screen.scss */
+/* line 755, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-buttonpane {
   background-image: none;
   margin: .7em 0 0 0;
@@ -1024,7 +1057,7 @@ div.edit {
   border-bottom: 0;
 }
 
-/* line 731, ../../app/stylesheets/screen.scss */
+/* line 758, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-buttonpane button {
   margin: .5em .2em .4em;
   cursor: pointer;
@@ -1034,25 +1067,25 @@ div.edit {
 }
 
 /* The close button */
-/* line 733, ../../app/stylesheets/screen.scss */
+/* line 760, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-close {
   float: right;
 }
 
 /* the now button */
-/* line 736, ../../app/stylesheets/screen.scss */
+/* line 763, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-now {
   float: left;
 }
 
 /* the deselect button */
-/* line 739, ../../app/stylesheets/screen.scss */
+/* line 766, ../../app/stylesheets/screen.scss */
 .ui-timepicker .ui-timepicker-deselect {
   float: left;
 }
 
 /* IE6 IFRAME FIX (taken from datepicker 1.5.3 */
-/* line 743, ../../app/stylesheets/screen.scss */
+/* line 770, ../../app/stylesheets/screen.scss */
 .ui-timepicker-cover {
   display: none;
   /*sorry for IE5*/
@@ -1074,7 +1107,7 @@ div.edit {
   /*must have*/
 }
 
-/* line 755, ../../app/stylesheets/screen.scss */
+/* line 782, ../../app/stylesheets/screen.scss */
 span > div#loading {
   position: fixed;
 }
@@ -1086,77 +1119,77 @@ font-size: 16px;
 }
 
 /* PAGINATION styling from http://mislav.uniqpath.com/will_paginate/    */
-/* line 766, ../../app/stylesheets/screen.scss */
+/* line 793, ../../app/stylesheets/screen.scss */
 .color_sample_black {
   background: black;
 }
 
-/* line 769, ../../app/stylesheets/screen.scss */
+/* line 796, ../../app/stylesheets/screen.scss */
 .color_sample_blue {
   background: blue;
 }
 
-/* line 772, ../../app/stylesheets/screen.scss */
+/* line 799, ../../app/stylesheets/screen.scss */
 .color_sample_brown {
   background: SaddleBrown;
 }
 
-/* line 775, ../../app/stylesheets/screen.scss */
+/* line 802, ../../app/stylesheets/screen.scss */
 .color_sample_coral {
   background: Tomato;
 }
 
-/* line 778, ../../app/stylesheets/screen.scss */
+/* line 805, ../../app/stylesheets/screen.scss */
 .color_sample_grey {
   background: SlateGrey;
 }
 
-/* line 781, ../../app/stylesheets/screen.scss */
+/* line 808, ../../app/stylesheets/screen.scss */
 .color_sample_light_blue {
   background: SkyBlue;
 }
 
-/* line 784, ../../app/stylesheets/screen.scss */
+/* line 811, ../../app/stylesheets/screen.scss */
 .color_sample_maroon {
   background: maroon;
 }
 
-/* line 787, ../../app/stylesheets/screen.scss */
+/* line 814, ../../app/stylesheets/screen.scss */
 .color_sample_mauve {
   background: MediumVioletRed;
 }
 
-/* line 790, ../../app/stylesheets/screen.scss */
+/* line 817, ../../app/stylesheets/screen.scss */
 .color_sample_ocean {
   background: DeepSkyBlue;
 }
 
-/* line 793, ../../app/stylesheets/screen.scss */
+/* line 820, ../../app/stylesheets/screen.scss */
 .color_sample_olive {
   background: olive;
 }
 
-/* line 796, ../../app/stylesheets/screen.scss */
+/* line 823, ../../app/stylesheets/screen.scss */
 .color_sample_orange {
   background: orange;
 }
 
-/* line 799, ../../app/stylesheets/screen.scss */
+/* line 826, ../../app/stylesheets/screen.scss */
 .color_sample_pink {
   background: Violet;
 }
 
-/* line 802, ../../app/stylesheets/screen.scss */
+/* line 829, ../../app/stylesheets/screen.scss */
 .color_sample_purple {
   background: BlueViolet;
 }
 
-/* line 805, ../../app/stylesheets/screen.scss */
+/* line 832, ../../app/stylesheets/screen.scss */
 .color_sample_salmon {
   background: Salmon;
 }
 
-/* line 808, ../../app/stylesheets/screen.scss */
+/* line 835, ../../app/stylesheets/screen.scss */
 .color_sample_teal {
   background: Teal;
 }

@@ -648,7 +648,34 @@ div.edit {
 		font-size: 80%;
 	}
 }
+/* microposts */
 
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: $grey-color;
+}
+/* for tutorial, this moved the gravatar to the left margin
+/*.gravatar {
+  float: left;
+  margin-right: 10px;
+}*/
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
 
 /* FullCalendar and Vinsol Full Calendar style.css are incorporated here with some other adjustments such as background color.   Right now border radius is chopping the calendar a little at the very bottom...might eliminate it on the bottom.  removed all the following FC styling troubleshooting events*/
 

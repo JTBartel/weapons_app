@@ -6,10 +6,15 @@
   %td.main.round
    / THIS SECTION IS WHERE YOU PUT YOUR .LINE AND .UNITS 
    .line
-    %h1
-     = gravatar_for @user
-     = @user.name
-     %br/
+    .unit.size1of2
+     %aside.span4
+      = render 'user_info'
+      / %h1
+      /  = gravatar_for @user
+      /  = @user.name
+    .unit.size1of2 
+     %aside.span4
+      = render 'micropost_form'
    .line
     #accordion
      %h3
@@ -23,9 +28,14 @@
       #header-2
        = render 'user_favorite_weapons'
   %td.sidebar.round
-   %strong Future use
-   %strong URL
-   = "future use"
+   .span8
+    - if @user.microposts.any?
+     %h3
+      Microposts (#{@user.microposts.count})
+     %ol.microposts
+      = render @microposts
+     = will_paginate @microposts
+
 / == Schema Information
 /#
 /# Table name: users

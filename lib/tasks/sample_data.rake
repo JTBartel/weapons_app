@@ -97,6 +97,11 @@ WeaponType.all.each do |weapon_type|
           :weapon_approval      => weaponapproval     )                        
       end
     end
+    users = User.all(limit: 6)
+    50.times do
+      content = Faker::Lorem.sentence(5)
+      users.each { |user| user.microposts.create!(content: content) }
+    end
   end
 end
 #  weapon_type          :string(255)
